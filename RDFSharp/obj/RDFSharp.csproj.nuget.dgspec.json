@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {
+      "version": "2.26.1",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj",
+        "projectName": "RDFSharp",
+        "projectPath": "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj",
+        "packagesPath": "C:\\Users\\tothz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\tothz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.Data.DataSetExtensions": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
