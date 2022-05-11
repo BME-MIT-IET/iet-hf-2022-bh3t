@@ -160,7 +160,7 @@ namespace RDFSharp.Model
         /// </summary>
         internal void RemoveItemInternal(RDFPatternMember item)
         {
-            System.Random rand = new Random();
+            //System.Random rand = new Random();
 
             //Remove item from collection
             this.Items.RemoveAll(x => x.Equals(item));
