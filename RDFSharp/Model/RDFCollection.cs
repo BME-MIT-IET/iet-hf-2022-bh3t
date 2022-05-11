@@ -159,6 +159,8 @@ namespace RDFSharp.Model
         /// </summary>
         internal void RemoveItemInternal(RDFPatternMember item)
         {
+            //Random rand = new Random();
+
             //Remove item from collection
             this.Items.RemoveAll(x => x.Equals(item));
             //Update ReificationSubject (if collection has turned back into "rdf:Nil" configuration)
