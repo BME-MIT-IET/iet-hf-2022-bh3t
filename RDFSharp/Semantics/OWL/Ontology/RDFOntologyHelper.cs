@@ -1504,14 +1504,14 @@ namespace RDFSharp.Semantics.OWL
                 }
                 else if (hasValueRestriction.RequiredValue.IsLiteral())
                 {
-                    try
+
                     //Iterate the compatible assertions and track the subject facts having the required value
                     foreach (var assertion in restrictionAssertions.Where(x => x.TaxonomyObject.IsLiteral()))
                     {
                         if (RDFQueryUtilities.CompareRDFPatternMembers(hasValueRestriction.RequiredValue.Value, assertion.TaxonomyObject.Value) == 0)
                             result.AddFact((RDFOntologyFact)assertion.TaxonomySubject);
                     }
-                    finally {}
+
                 }
             }
             #endregion
