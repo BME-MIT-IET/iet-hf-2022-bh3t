@@ -30,7 +30,7 @@ namespace RDFSharp.Model
         /// <summary>
         /// Default namespace of the library (rdfsharp)
         /// </summary>
-        private static RDFNamespace RDFSharpNS = new RDFNamespace(RDFVocabulary.RDFSHARP.PREFIX, RDFVocabulary.RDFSHARP.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.RDFSHARP.DEREFERENCE_URI));
+        private static RDFNamespace RDFSharpNS = new RDFNamespace(RDFVocabulary.RdfSharp.PREFIX, RDFVocabulary.RdfSharp.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.RdfSharp.DEREFERENCE_URI));
 
         /// <summary>
         /// Default namespace of the library
@@ -76,25 +76,25 @@ namespace RDFSharp.Model
                     new RDFNamespace(RDFVocabulary.RDF.PREFIX, RDFVocabulary.RDF.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.RDF.DEREFERENCE_URI)),
                     new RDFNamespace(RDFVocabulary.RDFS.PREFIX, RDFVocabulary.RDFS.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.RDFS.DEREFERENCE_URI)),
                     new RDFNamespace(RDFVocabulary.OWL.PREFIX, RDFVocabulary.OWL.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.OWL.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.SHACL.PREFIX, RDFVocabulary.SHACL.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.SHACL.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.SWRL.PREFIX, RDFVocabulary.SWRL.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.SWRL.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.SWRL.SWRLB.PREFIX, RDFVocabulary.SWRL.SWRLB.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.SWRL.SWRLB.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Shacl.PREFIX, RDFVocabulary.Shacl.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Shacl.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Swrl.PREFIX, RDFVocabulary.Swrl.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Swrl.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Swrl.SemanticWebRuleLangBuiltIns.PREFIX, RDFVocabulary.Swrl.SemanticWebRuleLangBuiltIns.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Swrl.SemanticWebRuleLangBuiltIns.DEREFERENCE_URI)),
                     new RDFNamespace(RDFVocabulary.XSD.PREFIX, RDFVocabulary.XSD.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.XSD.DEREFERENCE_URI)),
                     new RDFNamespace(RDFVocabulary.XML.PREFIX, RDFVocabulary.XML.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.XML.DEREFERENCE_URI)),
 
                     //Extended
                     new RDFNamespace(RDFVocabulary.DC.PREFIX, RDFVocabulary.DC.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.DC.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.DC.DCAM.PREFIX, RDFVocabulary.DC.DCAM.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.DC.DCAM.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.DC.DCTERMS.PREFIX, RDFVocabulary.DC.DCTERMS.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.DC.DCTERMS.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.DC.DCTYPE.PREFIX, RDFVocabulary.DC.DCTYPE.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.DC.DCTYPE.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.FOAF.PREFIX, RDFVocabulary.FOAF.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.FOAF.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.GEO.PREFIX, RDFVocabulary.GEO.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.GEO.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.SIOC.PREFIX, RDFVocabulary.SIOC.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.SIOC.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.SKOS.PREFIX, RDFVocabulary.SKOS.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.SKOS.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.SKOS.SKOSXL.PREFIX, RDFVocabulary.SKOS.SKOSXL.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.SKOS.SKOSXL.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.EARL.PREFIX, RDFVocabulary.EARL.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.EARL.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.CRM.PREFIX, RDFVocabulary.CRM.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.CRM.DEREFERENCE_URI)),
-                    new RDFNamespace(RDFVocabulary.DOAP.PREFIX, RDFVocabulary.DOAP.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.DOAP.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.DC.Dcam.PREFIX, RDFVocabulary.DC.Dcam.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.DC.Dcam.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.DC.Dcterms.PREFIX, RDFVocabulary.DC.Dcterms.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.DC.Dcterms.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.DC.Dctype.PREFIX, RDFVocabulary.DC.Dctype.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.DC.Dctype.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Foaf.PREFIX, RDFVocabulary.Foaf.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Foaf.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Geo.PREFIX, RDFVocabulary.Geo.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Geo.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Sioc.PREFIX, RDFVocabulary.Sioc.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Sioc.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Skos.PREFIX, RDFVocabulary.Skos.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Skos.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Skos.SkosXl.PREFIX, RDFVocabulary.Skos.SkosXl.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Skos.SkosXl.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Earl.PREFIX, RDFVocabulary.Earl.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Earl.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.Crm.PREFIX, RDFVocabulary.Crm.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.Crm.DEREFERENCE_URI)),
+                    new RDFNamespace(RDFVocabulary.DescriptionOfAProject.PREFIX, RDFVocabulary.DescriptionOfAProject.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.DescriptionOfAProject.DEREFERENCE_URI)),
                     new RDFNamespace(RDFVocabulary.VS.PREFIX, RDFVocabulary.VS.BASE_URI).SetDereferenceUri(new Uri(RDFVocabulary.VS.DEREFERENCE_URI))
                 }
             };

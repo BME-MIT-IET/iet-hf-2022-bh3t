@@ -75,7 +75,7 @@ namespace RDFSharp.Model
                 int comparison = RDFQueryUtilities.CompareRDFPatternMembers(this.Value, valueNode);
                 if (comparison == -99 || comparison >= 0)
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.SHACL.MIN_EXCLUSIVE_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.Shacl.MIN_EXCLUSIVE_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              valueNode,
@@ -97,9 +97,9 @@ namespace RDFSharp.Model
             {
                 //sh:minExclusive
                 if (this.Value is RDFResource)
-                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.MIN_EXCLUSIVE, (RDFResource)this.Value));
+                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.MIN_EXCLUSIVE, (RDFResource)this.Value));
                 else
-                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.MIN_EXCLUSIVE, (RDFLiteral)this.Value));
+                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.MIN_EXCLUSIVE, (RDFLiteral)this.Value));
             }
             return result;
         }

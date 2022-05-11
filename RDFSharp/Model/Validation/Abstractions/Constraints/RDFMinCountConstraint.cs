@@ -55,7 +55,7 @@ namespace RDFSharp.Model
             #region Evaluation
             if (valueNodes.Count < this.MinCount)
                 report.AddResult(new RDFValidationResult(shape,
-                                                         RDFVocabulary.SHACL.MIN_COUNT_CONSTRAINT_COMPONENT,
+                                                         RDFVocabulary.Shacl.MIN_COUNT_CONSTRAINT_COMPONENT,
                                                          focusNode,
                                                          shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                          null,
@@ -75,7 +75,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:minCount
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.MIN_COUNT, new RDFTypedLiteral(this.MinCount.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.MIN_COUNT, new RDFTypedLiteral(this.MinCount.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
             }
             return result;
         }

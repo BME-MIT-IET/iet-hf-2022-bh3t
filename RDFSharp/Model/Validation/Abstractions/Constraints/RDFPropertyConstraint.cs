@@ -75,7 +75,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:property
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.PROPERTY, this.PropertyShapeUri));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.PROPERTY, this.PropertyShapeUri));
             }
             return result;
         }

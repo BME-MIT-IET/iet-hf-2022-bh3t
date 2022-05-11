@@ -25,7 +25,7 @@ namespace RDFSharp.Model
         /// <summary>
         /// RDFSHARP represents the vocabulary of this library.
         /// </summary>
-        public static class RDFSHARP
+        public static class RdfSharp
         {
 
             #region Properties

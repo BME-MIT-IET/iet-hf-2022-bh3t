@@ -2162,7 +2162,7 @@ namespace RDFSharp.Semantics.OWL
 
             RDFResource taxonomyPredicate = taxonomyName.Equals(nameof(RDFOntologyClassModelMetadata.HasKey)) ? RDFVocabulary.OWL.HAS_KEY :
                                                 taxonomyName.Equals(nameof(RDFOntologyPropertyModelMetadata.PropertyChainAxiom)) ? RDFVocabulary.OWL.PROPERTY_CHAIN_AXIOM :
-                                                    taxonomyName.Equals(nameof(RDFOntologyDataMetadata.MemberList)) ? RDFVocabulary.SKOS.MEMBER_LIST :
+                                                    taxonomyName.Equals(nameof(RDFOntologyDataMetadata.MemberList)) ? RDFVocabulary.Skos.MEMBER_LIST :
                                                         null; //Unrecognized taxonomy predicates will not be handled
             if (taxonomyPredicate != null)
             {

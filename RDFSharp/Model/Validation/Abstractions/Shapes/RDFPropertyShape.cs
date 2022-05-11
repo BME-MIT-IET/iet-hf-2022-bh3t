@@ -135,24 +135,24 @@ namespace RDFSharp.Model
             RDFGraph result = base.ToRDFGraph();
 
             //PropertyShape
-            result.AddTriple(new RDFTriple(this, RDFVocabulary.RDF.TYPE, RDFVocabulary.SHACL.PROPERTY_SHAPE));
+            result.AddTriple(new RDFTriple(this, RDFVocabulary.RDF.TYPE, RDFVocabulary.Shacl.PROPERTY_SHAPE));
 
             //Path
-            result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.PATH, this.Path));
+            result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.PATH, this.Path));
 
             //Descriptions
-            this.Descriptions.ForEach(description => result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.DESCRIPTION, description)));
+            this.Descriptions.ForEach(description => result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.DESCRIPTION, description)));
 
             //Names
-            this.Names.ForEach(name => result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.NAME, name)));
+            this.Names.ForEach(name => result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.NAME, name)));
 
             //Order
             if (this.Order != null)
-                result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.ORDER, this.Order));
+                result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.ORDER, this.Order));
 
             //Group
             if (this.Group != null)
-                result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.GROUP, this.Group));
+                result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.GROUP, this.Group));
 
             return result;
         }

@@ -55,7 +55,7 @@ namespace RDFSharp.Model
             #region Evaluation
             if (valueNodes.Count > this.MaxCount)
                 report.AddResult(new RDFValidationResult(shape,
-                                                         RDFVocabulary.SHACL.MAX_COUNT_CONSTRAINT_COMPONENT,
+                                                         RDFVocabulary.Shacl.MAX_COUNT_CONSTRAINT_COMPONENT,
                                                          focusNode,
                                                          shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                          null,
@@ -75,7 +75,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:maxCount
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.MAX_COUNT, new RDFTypedLiteral(this.MaxCount.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.MAX_COUNT, new RDFTypedLiteral(this.MaxCount.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
             }
             return result;
         }

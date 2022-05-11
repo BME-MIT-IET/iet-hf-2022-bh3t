@@ -72,7 +72,7 @@ namespace RDFSharp.Model
                     int comparison = RDFQueryUtilities.CompareRDFPatternMembers(valueNode, predicateNode);
                     if (comparison == -99 || comparison > 0)
                         report.AddResult(new RDFValidationResult(shape,
-                                                                 RDFVocabulary.SHACL.LESS_THAN_OR_EQUALS_CONSTRAINT_COMPONENT,
+                                                                 RDFVocabulary.Shacl.LESS_THAN_OR_EQUALS_CONSTRAINT_COMPONENT,
                                                                  focusNode,
                                                                  shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                  valueNode,
@@ -94,7 +94,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:lessThanOrEquals
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.LESS_THAN_OR_EQUALS, this.LessThanOrEqualsPredicate));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.LESS_THAN_OR_EQUALS, this.LessThanOrEqualsPredicate));
             }
             return result;
         }

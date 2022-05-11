@@ -89,7 +89,7 @@ namespace RDFSharp.Model
 
                 if (valueNodeConformsCounter != 1)
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.SHACL.XONE_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.Shacl.XONE_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              valueNode,
@@ -116,7 +116,7 @@ namespace RDFSharp.Model
                 result.AddCollection(xoneShapes);
 
                 //sh:xone
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.XONE, xoneShapes.ReificationSubject));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.XONE, xoneShapes.ReificationSubject));
             }
             return result;
         }

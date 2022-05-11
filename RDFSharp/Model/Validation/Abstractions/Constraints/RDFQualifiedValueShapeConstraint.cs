@@ -96,7 +96,7 @@ namespace RDFSharp.Model
 
                 if (this.QualifiedValueMinCount.HasValue && conformingValues < this.QualifiedValueMinCount)
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.SHACL.QUALIFIED_MIN_COUNT_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.Shacl.QUALIFIED_MIN_COUNT_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              null,
@@ -105,7 +105,7 @@ namespace RDFSharp.Model
 
                 if (this.QualifiedValueMaxCount.HasValue && conformingValues > this.QualifiedValueMaxCount)
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.SHACL.QUALIFIED_MAX_COUNT_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.Shacl.QUALIFIED_MAX_COUNT_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              null,
@@ -126,15 +126,15 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:qualifiedValueShape
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.QUALIFIED_VALUE_SHAPE, this.QualifiedValueShapeUri));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.QUALIFIED_VALUE_SHAPE, this.QualifiedValueShapeUri));
 
                 //sh:qualifiedMinCount
                 if (this.QualifiedValueMinCount.HasValue)
-                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.QUALIFIED_MIN_COUNT, new RDFTypedLiteral(this.QualifiedValueMinCount.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
+                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.QUALIFIED_MIN_COUNT, new RDFTypedLiteral(this.QualifiedValueMinCount.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
 
                 //sh:qualifiedMaxCount
                 if (this.QualifiedValueMaxCount.HasValue)
-                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.QUALIFIED_MAX_COUNT, new RDFTypedLiteral(this.QualifiedValueMaxCount.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
+                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.QUALIFIED_MAX_COUNT, new RDFTypedLiteral(this.QualifiedValueMaxCount.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
             }
             return result;
         }

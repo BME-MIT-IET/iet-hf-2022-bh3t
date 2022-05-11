@@ -153,13 +153,13 @@ namespace RDFSharp.Semantics.SKOS
 
             //OrderedCollection
             result.AddFact(this);
-            result.AddClassTypeRelation(this, RDFVocabulary.SKOS.ORDERED_COLLECTION.ToRDFOntologyClass());
+            result.AddClassTypeRelation(this, RDFVocabulary.Skos.ORDERED_COLLECTION.ToRDFOntologyClass());
 
             //Concepts
             foreach (RDFSKOSConcept cn in this.GetMembers())
             {
                 result.AddFact(cn);
-                result.AddClassTypeRelation(cn, RDFVocabulary.SKOS.CONCEPT.ToRDFOntologyClass());
+                result.AddClassTypeRelation(cn, RDFVocabulary.Skos.CONCEPT.ToRDFOntologyClass());
                 result.AddMemberListRelation(this, cn);
             }
 

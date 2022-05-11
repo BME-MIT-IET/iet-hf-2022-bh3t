@@ -68,7 +68,7 @@ namespace RDFSharp.Model
                     case RDFResource valueNodeResource:
                         if (!classInstances.Any(x => x.Equals(valueNodeResource)))
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.SHACL.CLASS_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.Shacl.CLASS_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -79,7 +79,7 @@ namespace RDFSharp.Model
                     //Literal
                     case RDFLiteral valueNodeLiteral:
                         report.AddResult(new RDFValidationResult(shape,
-                                                                 RDFVocabulary.SHACL.CLASS_CONSTRAINT_COMPONENT,
+                                                                 RDFVocabulary.Shacl.CLASS_CONSTRAINT_COMPONENT,
                                                                  focusNode,
                                                                  shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                  valueNode,
@@ -102,7 +102,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:class
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.CLASS, this.ClassType));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.CLASS, this.ClassType));
             }
             return result;
         }

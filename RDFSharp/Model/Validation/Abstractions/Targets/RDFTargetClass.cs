@@ -44,7 +44,7 @@ namespace RDFSharp.Model
 
             //sh:targetClass
             if (shape != null)
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.TARGET_CLASS, this.TargetValue));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.TARGET_CLASS, this.TargetValue));
 
             return result;
         }

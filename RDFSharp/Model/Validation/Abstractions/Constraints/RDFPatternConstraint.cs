@@ -69,7 +69,7 @@ namespace RDFSharp.Model
                     case RDFResource valueNodeResource:
                         if (valueNodeResource.IsBlank || !this.RegEx.IsMatch(valueNodeResource.ToString()))
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.SHACL.PATTERN_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.Shacl.PATTERN_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -81,7 +81,7 @@ namespace RDFSharp.Model
                     case RDFLiteral valueNodeLiteral:
                         if (!this.RegEx.IsMatch(valueNodeLiteral.Value))
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.SHACL.PATTERN_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.Shacl.PATTERN_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -104,7 +104,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:pattern
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.PATTERN, new RDFTypedLiteral(this.RegEx.ToString(), RDFModelEnums.RDFDatatypes.XSD_STRING)));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.PATTERN, new RDFTypedLiteral(this.RegEx.ToString(), RDFModelEnums.RDFDatatypes.XSD_STRING)));
 
                 //sh:flags
                 StringBuilder regexFlags = new StringBuilder();
@@ -117,7 +117,7 @@ namespace RDFSharp.Model
                 if (this.RegEx.Options.HasFlag(RegexOptions.IgnorePatternWhitespace))
                     regexFlags.Append("x");
                 if (regexFlags.ToString() != string.Empty)
-                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.FLAGS, new RDFTypedLiteral(regexFlags.ToString(), RDFModelEnums.RDFDatatypes.XSD_STRING)));
+                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.FLAGS, new RDFTypedLiteral(regexFlags.ToString(), RDFModelEnums.RDFDatatypes.XSD_STRING)));
             }
             return result;
         }

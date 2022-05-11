@@ -108,8 +108,8 @@ namespace RDFSharp.Semantics.OWL
                     { nameof(RDFVocabulary.RDF.TYPE), ontGraph.SelectTriplesByPredicate(RDFVocabulary.RDF.TYPE) },
                     { nameof(RDFVocabulary.RDF.FIRST), ontGraph.SelectTriplesByPredicate(RDFVocabulary.RDF.FIRST) },
                     { nameof(RDFVocabulary.RDF.REST), ontGraph.SelectTriplesByPredicate(RDFVocabulary.RDF.REST) },
-                    { nameof(RDFVocabulary.SKOS.MEMBER), ontGraph.SelectTriplesByPredicate(RDFVocabulary.SKOS.MEMBER) }, //SKOS
-                    { nameof(RDFVocabulary.SKOS.MEMBER_LIST), ontGraph.SelectTriplesByPredicate(RDFVocabulary.SKOS.MEMBER_LIST) }, //SKOS
+                    { nameof(RDFVocabulary.Skos.MEMBER), ontGraph.SelectTriplesByPredicate(RDFVocabulary.Skos.MEMBER) }, //SKOS
+                    { nameof(RDFVocabulary.Skos.MEMBER_LIST), ontGraph.SelectTriplesByPredicate(RDFVocabulary.Skos.MEMBER_LIST) }, //SKOS
                     { nameof(RDFVocabulary.RDFS.SUB_CLASS_OF), ontGraph.SelectTriplesByPredicate(RDFVocabulary.RDFS.SUB_CLASS_OF) },
                     { nameof(RDFVocabulary.RDFS.SUB_PROPERTY_OF), ontGraph.SelectTriplesByPredicate(RDFVocabulary.RDFS.SUB_PROPERTY_OF) },
                     { nameof(RDFVocabulary.RDFS.DOMAIN), ontGraph.SelectTriplesByPredicate(RDFVocabulary.RDFS.DOMAIN) },
@@ -1770,12 +1770,12 @@ namespace RDFSharp.Semantics.OWL
             #endregion
 
             #region Member [SKOS]
-            foreach (RDFTriple col in prefetchContext[nameof(RDFVocabulary.SKOS.MEMBER)].Where(t => t.TripleFlavor == RDFModelEnums.RDFTripleFlavors.SPO))
+            foreach (RDFTriple col in prefetchContext[nameof(RDFVocabulary.Skos.MEMBER)].Where(t => t.TripleFlavor == RDFModelEnums.RDFTripleFlavors.SPO))
             {
                 //skos:Collection
                 RDFOntologyFact skosCollection = new RDFOntologyFact((RDFResource)col.Subject);
                 ontology.Data.AddFact(skosCollection);
-                ontology.Data.AddClassTypeRelation(skosCollection, RDFVocabulary.SKOS.COLLECTION.ToRDFOntologyClass());
+                ontology.Data.AddClassTypeRelation(skosCollection, RDFVocabulary.Skos.COLLECTION.ToRDFOntologyClass());
 
                 //skos:Collection -> skos:member -> [skos:Concept|skos:Collection]
                 ontology.Data.AddMemberRelation(skosCollection, new RDFOntologyFact((RDFResource)col.Object));
@@ -1783,12 +1783,12 @@ namespace RDFSharp.Semantics.OWL
             #endregion
 
             #region MemberList [SKOS]
-            foreach (RDFTriple ordCol in prefetchContext[nameof(RDFVocabulary.SKOS.MEMBER_LIST)].Where(t => t.TripleFlavor == RDFModelEnums.RDFTripleFlavors.SPO))
+            foreach (RDFTriple ordCol in prefetchContext[nameof(RDFVocabulary.Skos.MEMBER_LIST)].Where(t => t.TripleFlavor == RDFModelEnums.RDFTripleFlavors.SPO))
             {
                 //skos:OrderedCollection
                 RDFOntologyFact skosOrderedCollection = new RDFOntologyFact((RDFResource)ordCol.Subject);
                 ontology.Data.AddFact(skosOrderedCollection);
-                ontology.Data.AddClassTypeRelation(skosOrderedCollection, RDFVocabulary.SKOS.ORDERED_COLLECTION.ToRDFOntologyClass());
+                ontology.Data.AddClassTypeRelation(skosOrderedCollection, RDFVocabulary.Skos.ORDERED_COLLECTION.ToRDFOntologyClass());
 
                 #region DeserializeOrderedCollection
                 bool nilFound = false;
@@ -1802,7 +1802,7 @@ namespace RDFSharp.Semantics.OWL
                     {
                         //skos:OrderedCollection -> skos:memberList -> skos:Concept
                         ontology.Data.AddFact(((RDFResource)first.Object).ToRDFOntologyFact());
-                        ontology.Data.AddClassTypeRelation(((RDFResource)first.Object).ToRDFOntologyFact(), RDFVocabulary.SKOS.CONCEPT.ToRDFOntologyClass());
+                        ontology.Data.AddClassTypeRelation(((RDFResource)first.Object).ToRDFOntologyFact(), RDFVocabulary.Skos.CONCEPT.ToRDFOntologyClass());
                         ontology.Data.AddMemberListRelation(skosOrderedCollection, ((RDFResource)first.Object).ToRDFOntologyFact());
 
                         #region rdf:rest
@@ -2598,12 +2598,12 @@ namespace RDFSharp.Semantics.OWL
                     #endregion
 
                     #region Data(Member)
-                    else if (annotatedProperty.Equals(RDFVocabulary.SKOS.MEMBER))
+                    else if (annotatedProperty.Equals(RDFVocabulary.Skos.MEMBER))
                         ontology.Data.AddMemberRelation(((RDFResource)annotatedSource).ToRDFOntologyFact(), ((RDFResource)annotatedTarget).ToRDFOntologyFact(), axiomAnnotation);
                     #endregion
 
                     #region Data(MemberList)
-                    else if (annotatedProperty.Equals(RDFVocabulary.SKOS.MEMBER_LIST))
+                    else if (annotatedProperty.Equals(RDFVocabulary.Skos.MEMBER_LIST))
                         ontology.Data.AddMemberListRelation(((RDFResource)annotatedSource).ToRDFOntologyFact(), ((RDFResource)annotatedTarget).ToRDFOntologyFact(), axiomAnnotation);
                     #endregion
 

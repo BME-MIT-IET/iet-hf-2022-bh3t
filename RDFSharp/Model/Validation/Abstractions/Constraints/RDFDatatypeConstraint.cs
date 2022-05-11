@@ -60,7 +60,7 @@ namespace RDFSharp.Model
                     //Resource
                     case RDFResource _:
                         report.AddResult(new RDFValidationResult(shape,
-                                                                 RDFVocabulary.SHACL.DATATYPE_CONSTRAINT_COMPONENT,
+                                                                 RDFVocabulary.Shacl.DATATYPE_CONSTRAINT_COMPONENT,
                                                                  focusNode,
                                                                  shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                  valueNode,
@@ -72,7 +72,7 @@ namespace RDFSharp.Model
                     case RDFPlainLiteral valueNodePlainLiteral:
                         if (this.Datatype != RDFModelEnums.RDFDatatypes.XSD_STRING || valueNodePlainLiteral.HasLanguage())
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.SHACL.DATATYPE_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.Shacl.DATATYPE_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -84,7 +84,7 @@ namespace RDFSharp.Model
                     case RDFTypedLiteral valueNodeTypedLiteral:
                         if (this.Datatype != valueNodeTypedLiteral.Datatype)
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.SHACL.DATATYPE_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.Shacl.DATATYPE_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -107,7 +107,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:datatype
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.DATATYPE, new RDFResource(RDFModelUtilities.GetDatatypeFromEnum(this.Datatype))));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.DATATYPE, new RDFResource(RDFModelUtilities.GetDatatypeFromEnum(this.Datatype))));
             }
             return result;
         }

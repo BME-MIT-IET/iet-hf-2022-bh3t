@@ -68,7 +68,7 @@ namespace RDFSharp.Model
                 RDFValidationReport notShapeReport = RDFValidationEngine.ValidateShape(shapesGraph, dataGraph, notShape, new List<RDFPatternMember>() { valueNode });
                 if (notShapeReport.Conforms)
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.SHACL.NOT_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.Shacl.NOT_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              valueNode,
@@ -89,7 +89,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:not
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.NOT, this.NotShape));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.NOT, this.NotShape));
             }
             return result;
         }

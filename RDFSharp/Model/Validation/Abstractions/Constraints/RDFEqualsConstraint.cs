@@ -68,7 +68,7 @@ namespace RDFSharp.Model
             {
                 if (!valueNodes.Any(v => v.Equals(predicateNode)))
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.SHACL.EQUALS_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.Shacl.EQUALS_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              predicateNode,
@@ -80,7 +80,7 @@ namespace RDFSharp.Model
             {
                 if (!predicateNodes.Any(p => p.Equals(valueNode)))
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.SHACL.EQUALS_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.Shacl.EQUALS_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              valueNode,
@@ -101,7 +101,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:equals
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.EQUALS, this.EqualsPredicate));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.EQUALS, this.EqualsPredicate));
             }
             return result;
         }
