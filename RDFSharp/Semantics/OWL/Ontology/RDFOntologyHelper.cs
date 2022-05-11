@@ -1504,7 +1504,6 @@ namespace RDFSharp.Semantics.OWL
                 }
                 else if (hasValueRestriction.RequiredValue.IsLiteral())
                 {
-                    //if(true){;}
                     //Iterate the compatible assertions and track the subject facts having the required value
                     foreach (var assertion in restrictionAssertions.Where(x => x.TaxonomyObject.IsLiteral()))
                     {
