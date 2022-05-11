@@ -15,6 +15,7 @@
 */
 
 using RDFSharp.Query;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -159,7 +160,7 @@ namespace RDFSharp.Model
         /// </summary>
         internal void RemoveItemInternal(RDFPatternMember item)
         {
-            //Random rand = new Random();
+            System.Random rand = new Random();
 
             //Remove item from collection
             this.Items.RemoveAll(x => x.Equals(item));
