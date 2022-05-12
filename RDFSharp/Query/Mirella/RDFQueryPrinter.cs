@@ -39,12 +39,12 @@ namespace RDFSharp.Query
             if (selectQuery != null)
             {
                 #region INDENT
-                int subqueryHeaderSpacesFunc(double indLevel) { return subqueryBodySpacesFunc(indentLevel) - 2 < 0 ? 0 : subqueryBodySpacesFunc(indentLevel) - 2; }
-                int subqueryBodySpacesFunc(double indLevel) { return Convert.ToInt32(4 * indentLevel); }
+                int subqueryHeaderSpacesFunc() { return subqueryBodySpacesFunc() - 2 < 0 ? 0 : subqueryBodySpacesFunc() - 2; }
+                int subqueryBodySpacesFunc() { return Convert.ToInt32(4 * indentLevel); }
                 int subqueryUnionSpacesFunc(bool union) { return union ? 2 : 0; }
 
-                string subquerySpaces = new string(' ', subqueryHeaderSpacesFunc(indentLevel) + subqueryUnionSpacesFunc(fromUnion));
-                string subqueryBodySpaces = new string(' ', subqueryBodySpacesFunc(indentLevel) + subqueryUnionSpacesFunc(fromUnion));
+                string subquerySpaces = new string(' ', subqueryHeaderSpacesFunc() + subqueryUnionSpacesFunc(fromUnion));
+                string subqueryBodySpaces = new string(' ', subqueryBodySpacesFunc() + subqueryUnionSpacesFunc(fromUnion));
                 #endregion
 
                 #region PREFIX
