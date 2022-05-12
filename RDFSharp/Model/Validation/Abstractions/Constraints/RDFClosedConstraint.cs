@@ -95,7 +95,7 @@ namespace RDFSharp.Model
                         IEnumerable<RDFTriple> unallowedTriples = valuenodeResourceGraph.Where(t => !allowedProperties.Any(p => p.Equals(t.Predicate)));
                         foreach (RDFTriple unallowedTriple in unallowedTriples)
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.Shacl.CLOSED_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.SHACL.CLOSED_CONSTRAINT_COMPONENT,
                                                                      valueNodeResource,
                                                                      unallowedTriple.Predicate as RDFResource,
                                                                      unallowedTriple.Object,
@@ -118,7 +118,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:closed
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.CLOSED, this.Closed ? RDFTypedLiteral.True : RDFTypedLiteral.False));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.CLOSED, this.Closed ? RDFTypedLiteral.True : RDFTypedLiteral.False));
 
                 //Get collection from ignored properties
                 RDFCollection ignoredProperties = new RDFCollection(RDFModelEnums.RDFItemTypes.Resource) { InternalReificationSubject = this };
@@ -127,7 +127,7 @@ namespace RDFSharp.Model
                 result.AddCollection(ignoredProperties);
 
                 //sh:ignoredProperties
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.IGNORED_PROPERTIES, ignoredProperties.ReificationSubject));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.IGNORED_PROPERTIES, ignoredProperties.ReificationSubject));
             }
             return result;
         }

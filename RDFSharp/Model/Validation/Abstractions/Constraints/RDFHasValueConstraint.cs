@@ -72,7 +72,7 @@ namespace RDFSharp.Model
             #region Evaluation
             if (!valueNodes.Any(v => v.Equals(this.Value)))
                 report.AddResult(new RDFValidationResult(shape,
-                                                         RDFVocabulary.Shacl.HAS_VALUE_CONSTRAINT_COMPONENT,
+                                                         RDFVocabulary.SHACL.HAS_VALUE_CONSTRAINT_COMPONENT,
                                                          focusNode,
                                                          shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                          null,
@@ -93,9 +93,9 @@ namespace RDFSharp.Model
             {
                 //sh:hasValue
                 if (this.Value is RDFResource)
-                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.HAS_VALUE, (RDFResource)this.Value));
+                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.HAS_VALUE, (RDFResource)this.Value));
                 else
-                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.HAS_VALUE, (RDFLiteral)this.Value));
+                    result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.HAS_VALUE, (RDFLiteral)this.Value));
             }
             return result;
         }

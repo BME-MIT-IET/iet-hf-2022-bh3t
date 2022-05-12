@@ -92,7 +92,7 @@ namespace RDFSharp.Model
             {
                 if (!this.InValues.Any(v => v.Value.Equals(valueNode)))
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.Shacl.IN_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.SHACL.IN_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              valueNode,
@@ -124,7 +124,7 @@ namespace RDFSharp.Model
                 result.AddCollection(inValues);
 
                 //sh:in
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.IN, inValues.ReificationSubject));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.IN, inValues.ReificationSubject));
             }
             return result;
         }

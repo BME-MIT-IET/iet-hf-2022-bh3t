@@ -73,7 +73,7 @@ namespace RDFSharp.Model
 
                     //Report evidence from working shape
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.Shacl.NODE_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.SHACL.NODE_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              valueNode,
@@ -95,7 +95,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:node
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.NODE, this.NodeShapeUri));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.NODE, this.NodeShapeUri));
             }
             return result;
         }

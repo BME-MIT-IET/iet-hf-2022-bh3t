@@ -65,7 +65,7 @@ namespace RDFSharp.Model
                                            && t.Predicate.Equals(this.DisjointPredicate)
                                                && t.Object.Equals(valueNode)))
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.Shacl.DISJOINT_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.SHACL.DISJOINT_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              valueNode,
@@ -86,7 +86,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:disjoint
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.DISJOINT, this.DisjointPredicate));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.DISJOINT, this.DisjointPredicate));
             }
             return result;
         }

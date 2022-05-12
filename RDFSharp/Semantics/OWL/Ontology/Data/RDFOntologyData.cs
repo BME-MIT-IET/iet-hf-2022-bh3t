@@ -390,9 +390,9 @@ namespace RDFSharp.Semantics.OWL
                         //Collision with negative assertions must be avoided [OWL2]
                         if (RDFOntologyChecker.CheckAssertionCompatibility(this, aFact, objectProperty, bFact))
                         {
-                            if (objectProperty.Equals(RDFVocabulary.Skos.MEMBER))
+                            if (objectProperty.Equals(RDFVocabulary.SKOS.MEMBER))
                                 this.AddMemberRelation(aFact, bFact, axiomAnnotation);
-                            else if (objectProperty.Equals(RDFVocabulary.Skos.MEMBER_LIST))
+                            else if (objectProperty.Equals(RDFVocabulary.SKOS.MEMBER_LIST))
                                 this.AddMemberListRelation(aFact, bFact, axiomAnnotation);
                             else
                             {
@@ -438,8 +438,8 @@ namespace RDFSharp.Semantics.OWL
                     if (RDFOntologyChecker.CheckAssertionCompatibility(this, ontologyFact, datatypeProperty, ontologyLiteral))
                     {
                         //Cannot accept assertion in case of SKOS collection predicates
-                        if (!datatypeProperty.Equals(RDFVocabulary.Skos.MEMBER)
-                                && !datatypeProperty.Equals(RDFVocabulary.Skos.MEMBER_LIST))
+                        if (!datatypeProperty.Equals(RDFVocabulary.SKOS.MEMBER)
+                                && !datatypeProperty.Equals(RDFVocabulary.SKOS.MEMBER_LIST))
                         {
                             RDFOntologyTaxonomyEntry taxonomyEntry = new RDFOntologyTaxonomyEntry(ontologyFact, datatypeProperty, ontologyLiteral);
                             this.Relations.Assertions.AddEntry(taxonomyEntry);
@@ -483,8 +483,8 @@ namespace RDFSharp.Semantics.OWL
                     if (RDFOntologyChecker.CheckNegativeAssertionCompatibility(this, aFact, objectProperty, bFact))
                     {
                         //Cannot accept negative assertion in case of SKOS collection predicates
-                        if (!objectProperty.Equals(RDFVocabulary.Skos.MEMBER)
-                                && !objectProperty.Equals(RDFVocabulary.Skos.MEMBER_LIST))
+                        if (!objectProperty.Equals(RDFVocabulary.SKOS.MEMBER)
+                                && !objectProperty.Equals(RDFVocabulary.SKOS.MEMBER_LIST))
                             this.Relations.NegativeAssertions.AddEntry(new RDFOntologyTaxonomyEntry(aFact, objectProperty, bFact));
                         else
                         {
@@ -521,8 +521,8 @@ namespace RDFSharp.Semantics.OWL
                     if (RDFOntologyChecker.CheckNegativeAssertionCompatibility(this, ontologyFact, datatypeProperty, ontologyLiteral))
                     {
                         //Cannot accept negative assertion in case of SKOS collection predicates
-                        if (!datatypeProperty.Equals(RDFVocabulary.Skos.MEMBER)
-                                && !datatypeProperty.Equals(RDFVocabulary.Skos.MEMBER_LIST))
+                        if (!datatypeProperty.Equals(RDFVocabulary.SKOS.MEMBER)
+                                && !datatypeProperty.Equals(RDFVocabulary.SKOS.MEMBER_LIST))
                         {
                             this.Relations.NegativeAssertions.AddEntry(new RDFOntologyTaxonomyEntry(ontologyFact, datatypeProperty, ontologyLiteral));
                             this.AddLiteral(ontologyLiteral);
@@ -1044,9 +1044,9 @@ namespace RDFSharp.Semantics.OWL
         {
             if (aFact != null && objectProperty != null && bFact != null)
             {
-                if (objectProperty.Equals(RDFVocabulary.Skos.MEMBER))
+                if (objectProperty.Equals(RDFVocabulary.SKOS.MEMBER))
                     this.RemoveMemberRelation(aFact, bFact);
-                else if (objectProperty.Equals(RDFVocabulary.Skos.MEMBER_LIST))
+                else if (objectProperty.Equals(RDFVocabulary.SKOS.MEMBER_LIST))
                     this.RemoveMemberListRelation(aFact, bFact);
                 else
                 {

@@ -657,27 +657,27 @@ namespace RDFSharp.Semantics.SKOS
 
             //ConceptScheme
             result.AddFact(this);
-            result.AddClassTypeRelation(this, RDFVocabulary.Skos.CONCEPT_SCHEME.ToRDFOntologyClass());
+            result.AddClassTypeRelation(this, RDFVocabulary.SKOS.CONCEPT_SCHEME.ToRDFOntologyClass());
 
             //Concepts
             foreach (RDFSKOSConcept c in this)
             {
                 result.AddFact(c);
-                result.AddClassTypeRelation(c, RDFVocabulary.Skos.CONCEPT.ToRDFOntologyClass());
-                result.AddAssertionRelation(c, RDFVocabulary.Skos.IN_SCHEME.ToRDFOntologyObjectProperty(), this);
+                result.AddClassTypeRelation(c, RDFVocabulary.SKOS.CONCEPT.ToRDFOntologyClass());
+                result.AddAssertionRelation(c, RDFVocabulary.SKOS.IN_SCHEME.ToRDFOntologyObjectProperty(), this);
             }
 
             //Collections
             foreach (RDFSKOSCollection c in this.Collections.Values)
             {
-                result.AddAssertionRelation(c, RDFVocabulary.Skos.IN_SCHEME.ToRDFOntologyObjectProperty(), this);
+                result.AddAssertionRelation(c, RDFVocabulary.SKOS.IN_SCHEME.ToRDFOntologyObjectProperty(), this);
                 result = result.UnionWith(c.ToRDFOntologyData());
             }
 
             //OrderedCollections
             foreach (RDFSKOSOrderedCollection o in this.OrderedCollections.Values)
             {
-                result.AddAssertionRelation(o, RDFVocabulary.Skos.IN_SCHEME.ToRDFOntologyObjectProperty(), this);
+                result.AddAssertionRelation(o, RDFVocabulary.SKOS.IN_SCHEME.ToRDFOntologyObjectProperty(), this);
                 result = result.UnionWith(o.ToRDFOntologyData());
             }
 
@@ -685,8 +685,8 @@ namespace RDFSharp.Semantics.SKOS
             foreach (RDFSKOSLabel l in this.Labels.Values)
             {
                 result.AddFact(l);
-                result.AddClassTypeRelation(l, RDFVocabulary.Skos.SkosXl.LABEL.ToRDFOntologyClass());
-                result.AddAssertionRelation(l, RDFVocabulary.Skos.IN_SCHEME.ToRDFOntologyObjectProperty(), this);
+                result.AddClassTypeRelation(l, RDFVocabulary.SKOS.SKOSXL.LABEL.ToRDFOntologyClass());
+                result.AddAssertionRelation(l, RDFVocabulary.SKOS.IN_SCHEME.ToRDFOntologyObjectProperty(), this);
             }
 
             //Assertions

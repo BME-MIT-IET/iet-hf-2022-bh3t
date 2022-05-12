@@ -92,49 +92,49 @@ namespace RDFSharp.Model
             RDFGraph result = new RDFGraph();
 
             //ValidationResult
-            result.AddTriple(new RDFTriple(this, RDFVocabulary.RDF.TYPE, RDFVocabulary.Shacl.VALIDATION_RESULT));
+            result.AddTriple(new RDFTriple(this, RDFVocabulary.RDF.TYPE, RDFVocabulary.SHACL.VALIDATION_RESULT));
 
             //Severity
             switch (this.Severity)
             {
                 case RDFValidationEnums.RDFShapeSeverity.Info:
-                    result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.RESULT_SEVERITY, RDFVocabulary.Shacl.INFO));
+                    result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.RESULT_SEVERITY, RDFVocabulary.SHACL.INFO));
                     break;
                 case RDFValidationEnums.RDFShapeSeverity.Warning:
-                    result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.RESULT_SEVERITY, RDFVocabulary.Shacl.WARNING));
+                    result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.RESULT_SEVERITY, RDFVocabulary.SHACL.WARNING));
                     break;
                 case RDFValidationEnums.RDFShapeSeverity.Violation:
-                    result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.RESULT_SEVERITY, RDFVocabulary.Shacl.VIOLATION));
+                    result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.RESULT_SEVERITY, RDFVocabulary.SHACL.VIOLATION));
                     break;
             }
 
             //SourceShape
             if (this.SourceShape != null)
-                result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.SOURCE_SHAPE, this.SourceShape));
+                result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.SOURCE_SHAPE, this.SourceShape));
 
             //SourceConstraintComponent
             if (this.SourceConstraintComponent != null)
-                result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.SOURCE_CONSTRAINT_COMPONENT, this.SourceConstraintComponent));
+                result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.SOURCE_CONSTRAINT_COMPONENT, this.SourceConstraintComponent));
 
             //FocusNode
             if (this.FocusNode != null && this.FocusNode is RDFResource)
-                result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.FOCUS_NODE, (RDFResource)this.FocusNode));
+                result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.FOCUS_NODE, (RDFResource)this.FocusNode));
 
             //ResultPath
             if (this.ResultPath != null)
-                result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.RESULT_PATH, this.ResultPath));
+                result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.RESULT_PATH, this.ResultPath));
 
             //Value
             if (this.ResultValue != null)
             {
                 if (this.ResultValue is RDFLiteral)
-                    result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.VALUE, (RDFLiteral)this.ResultValue));
+                    result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.VALUE, (RDFLiteral)this.ResultValue));
                 else
-                    result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.VALUE, (RDFResource)this.ResultValue));
+                    result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.VALUE, (RDFResource)this.ResultValue));
             }
 
             //Messages
-            this.ResultMessages.ForEach(message => result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.RESULT_MESSAGE, message)));
+            this.ResultMessages.ForEach(message => result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.RESULT_MESSAGE, message)));
 
             result.SetContext(this.URI);
             return result;

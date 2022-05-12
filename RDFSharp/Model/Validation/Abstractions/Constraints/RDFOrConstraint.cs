@@ -89,7 +89,7 @@ namespace RDFSharp.Model
 
                 if (!valueNodeConforms)
                     report.AddResult(new RDFValidationResult(shape,
-                                                             RDFVocabulary.Shacl.OR_CONSTRAINT_COMPONENT,
+                                                             RDFVocabulary.SHACL.OR_CONSTRAINT_COMPONENT,
                                                              focusNode,
                                                              shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                              valueNode,
@@ -116,7 +116,7 @@ namespace RDFSharp.Model
                 result.AddCollection(orShapes);
 
                 //sh:or
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.OR, orShapes.ReificationSubject));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.OR, orShapes.ReificationSubject));
             }
             return result;
         }

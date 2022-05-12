@@ -25,7 +25,7 @@ namespace RDFSharp.Model
         /// <summary>
         /// SWRL represents the W3C Semantic Web Rule Language vocabulary.
         /// </summary>
-        public static class Swrl
+        public static class SWRL
         {
 
             #region Properties
@@ -49,7 +49,7 @@ namespace RDFSharp.Model
             /// <summary>
             /// SWRLB represents the W3C Semantic Web Rule Language - BuiltIns vocabulary.
             /// </summary>
-            public static class SemanticWebRuleLangBuiltIns
+            public static class SWRLB
             {
 
                 #region Properties

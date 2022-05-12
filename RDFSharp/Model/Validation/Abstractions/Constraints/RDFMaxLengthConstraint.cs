@@ -61,7 +61,7 @@ namespace RDFSharp.Model
                     case RDFResource valueNodeResource:
                         if (valueNodeResource.IsBlank || valueNodeResource.ToString().Length > this.MaxLength)
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.Shacl.MAX_LENGTH_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.SHACL.MAX_LENGTH_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -73,7 +73,7 @@ namespace RDFSharp.Model
                     case RDFLiteral valueNodeLiteral:
                         if (valueNodeLiteral.Value.Length > this.MaxLength)
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.Shacl.MAX_LENGTH_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.SHACL.MAX_LENGTH_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -96,7 +96,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:maxLength
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.MAX_LENGTH, new RDFTypedLiteral(this.MaxLength.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.MAX_LENGTH, new RDFTypedLiteral(this.MaxLength.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
             }
             return result;
         }

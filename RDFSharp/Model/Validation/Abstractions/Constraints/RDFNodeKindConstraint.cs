@@ -66,7 +66,7 @@ namespace RDFSharp.Model
                                         || this.NodeKind == RDFValidationEnums.RDFNodeKinds.Literal)
                             {
                                 report.AddResult(new RDFValidationResult(shape,
-                                                                         RDFVocabulary.Shacl.NODE_KIND_CONSTRAINT_COMPONENT,
+                                                                         RDFVocabulary.SHACL.NODE_KIND_CONSTRAINT_COMPONENT,
                                                                          focusNode,
                                                                          shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                          valueNode,
@@ -81,7 +81,7 @@ namespace RDFSharp.Model
                                         || this.NodeKind == RDFValidationEnums.RDFNodeKinds.Literal)
                             {
                                 report.AddResult(new RDFValidationResult(shape,
-                                                                         RDFVocabulary.Shacl.NODE_KIND_CONSTRAINT_COMPONENT,
+                                                                         RDFVocabulary.SHACL.NODE_KIND_CONSTRAINT_COMPONENT,
                                                                          focusNode,
                                                                          shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                          valueNode,
@@ -98,7 +98,7 @@ namespace RDFSharp.Model
                                     || this.NodeKind == RDFValidationEnums.RDFNodeKinds.IRI)
                         {
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.Shacl.NODE_KIND_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.SHACL.NODE_KIND_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -125,22 +125,22 @@ namespace RDFSharp.Model
                 switch (this.NodeKind)
                 {
                     case RDFValidationEnums.RDFNodeKinds.BlankNode:
-                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.NODE_KIND, RDFVocabulary.Shacl.BLANK_NODE));
+                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.NODE_KIND, RDFVocabulary.SHACL.BLANK_NODE));
                         break;
                     case RDFValidationEnums.RDFNodeKinds.BlankNodeOrIRI:
-                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.NODE_KIND, RDFVocabulary.Shacl.BLANK_NODE_OR_IRI));
+                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.NODE_KIND, RDFVocabulary.SHACL.BLANK_NODE_OR_IRI));
                         break;
                     case RDFValidationEnums.RDFNodeKinds.BlankNodeOrLiteral:
-                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.NODE_KIND, RDFVocabulary.Shacl.BLANK_NODE_OR_LITERAL));
+                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.NODE_KIND, RDFVocabulary.SHACL.BLANK_NODE_OR_LITERAL));
                         break;
                     case RDFValidationEnums.RDFNodeKinds.IRI:
-                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.NODE_KIND, RDFVocabulary.Shacl.IRI));
+                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.NODE_KIND, RDFVocabulary.SHACL.IRI));
                         break;
                     case RDFValidationEnums.RDFNodeKinds.IRIOrLiteral:
-                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.NODE_KIND, RDFVocabulary.Shacl.IRI_OR_LITERAL));
+                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.NODE_KIND, RDFVocabulary.SHACL.IRI_OR_LITERAL));
                         break;
                     case RDFValidationEnums.RDFNodeKinds.Literal:
-                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.NODE_KIND, RDFVocabulary.Shacl.LITERAL));
+                        result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.NODE_KIND, RDFVocabulary.SHACL.LITERAL));
                         break;
                 }
             }

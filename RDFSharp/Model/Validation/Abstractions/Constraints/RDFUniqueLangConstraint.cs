@@ -73,7 +73,7 @@ namespace RDFSharp.Model
                             {
                                 reportedLangs.Add(innerlanglitValueNode.Language);
                                 report.AddResult(new RDFValidationResult(shape,
-                                                                         RDFVocabulary.Shacl.UNIQUE_LANG_CONSTRAINT_COMPONENT,
+                                                                         RDFVocabulary.SHACL.UNIQUE_LANG_CONSTRAINT_COMPONENT,
                                                                          focusNode,
                                                                          shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                          null,
@@ -98,7 +98,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:uniqueLang
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.UNIQUE_LANG, this.UniqueLang ? RDFTypedLiteral.True : RDFTypedLiteral.False));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.UNIQUE_LANG, this.UniqueLang ? RDFTypedLiteral.True : RDFTypedLiteral.False));
             }
             return result;
         }

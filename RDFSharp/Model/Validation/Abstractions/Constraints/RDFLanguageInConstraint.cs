@@ -90,7 +90,7 @@ namespace RDFSharp.Model
                         if (!langMatches)
                         {
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.Shacl.LANGUAGE_IN_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.SHACL.LANGUAGE_IN_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -102,7 +102,7 @@ namespace RDFSharp.Model
                     //Resource/TypedLiteral
                     default:
                         report.AddResult(new RDFValidationResult(shape,
-                                                                 RDFVocabulary.Shacl.LANGUAGE_IN_CONSTRAINT_COMPONENT,
+                                                                 RDFVocabulary.SHACL.LANGUAGE_IN_CONSTRAINT_COMPONENT,
                                                                  focusNode,
                                                                  shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                  valueNode,
@@ -131,7 +131,7 @@ namespace RDFSharp.Model
                 result.AddCollection(languageTags);
 
                 //sh:languageIn
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.LANGUAGE_IN, languageTags.ReificationSubject));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.LANGUAGE_IN, languageTags.ReificationSubject));
             }
             return result;
         }

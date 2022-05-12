@@ -42,7 +42,7 @@ namespace RDFSharp.Model
             RDFGraph result = base.ToRDFGraph();
 
             //NodeShape
-            result.AddTriple(new RDFTriple(this, RDFVocabulary.RDF.TYPE, RDFVocabulary.Shacl.NODE_SHAPE));
+            result.AddTriple(new RDFTriple(this, RDFVocabulary.RDF.TYPE, RDFVocabulary.SHACL.NODE_SHAPE));
 
             return result;
         }

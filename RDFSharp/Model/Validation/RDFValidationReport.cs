@@ -105,18 +105,18 @@ namespace RDFSharp.Model
             RDFGraph result = new RDFGraph();
 
             //ValidationReport
-            result.AddTriple(new RDFTriple(this, RDFVocabulary.RDF.TYPE, RDFVocabulary.Shacl.VALIDATION_REPORT));
+            result.AddTriple(new RDFTriple(this, RDFVocabulary.RDF.TYPE, RDFVocabulary.SHACL.VALIDATION_REPORT));
 
             //Conforms
             if (this.Conforms)
-                result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.CONFORMS, RDFTypedLiteral.True));
+                result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.CONFORMS, RDFTypedLiteral.True));
             else
-                result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.CONFORMS, RDFTypedLiteral.False));
+                result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.CONFORMS, RDFTypedLiteral.False));
 
             //Results
             this.Results.ForEach(res =>
             {
-                result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.RESULT, res));
+                result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.RESULT, res));
                 result = result.UnionWith(res.ToRDFGraph());
             });
 

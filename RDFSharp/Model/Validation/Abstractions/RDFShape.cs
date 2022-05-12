@@ -188,21 +188,21 @@ namespace RDFSharp.Model
             switch (this.Severity)
             {
                 case RDFValidationEnums.RDFShapeSeverity.Info:
-                    result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.SEVERITY_PROPERTY, RDFVocabulary.Shacl.INFO));
+                    result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.SEVERITY_PROPERTY, RDFVocabulary.SHACL.INFO));
                     break;
                 case RDFValidationEnums.RDFShapeSeverity.Warning:
-                    result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.SEVERITY_PROPERTY, RDFVocabulary.Shacl.WARNING));
+                    result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.SEVERITY_PROPERTY, RDFVocabulary.SHACL.WARNING));
                     break;
                 case RDFValidationEnums.RDFShapeSeverity.Violation:
-                    result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.SEVERITY_PROPERTY, RDFVocabulary.Shacl.VIOLATION));
+                    result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.SEVERITY_PROPERTY, RDFVocabulary.SHACL.VIOLATION));
                     break;
             }
 
             //Deactivated
-            result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.DEACTIVATED, this.Deactivated ? RDFTypedLiteral.True : RDFTypedLiteral.False));
+            result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.DEACTIVATED, this.Deactivated ? RDFTypedLiteral.True : RDFTypedLiteral.False));
 
             //Messages
-            this.Messages.ForEach(message => result.AddTriple(new RDFTriple(this, RDFVocabulary.Shacl.MESSAGE, message)));
+            this.Messages.ForEach(message => result.AddTriple(new RDFTriple(this, RDFVocabulary.SHACL.MESSAGE, message)));
 
             //Targets
             this.Targets.ForEach(target => result = result.UnionWith(target.ToRDFGraph(this)));

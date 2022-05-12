@@ -62,7 +62,7 @@ namespace RDFSharp.Model
                         if (valueNodeResource.IsBlank
                                 || (this.MinLength > 0 && valueNodeResource.ToString().Length < this.MinLength))
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.Shacl.MIN_LENGTH_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.SHACL.MIN_LENGTH_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -74,7 +74,7 @@ namespace RDFSharp.Model
                     case RDFLiteral valueNodeLiteral:
                         if (this.MinLength > 0 && valueNodeLiteral.Value.Length < this.MinLength)
                             report.AddResult(new RDFValidationResult(shape,
-                                                                     RDFVocabulary.Shacl.MIN_LENGTH_CONSTRAINT_COMPONENT,
+                                                                     RDFVocabulary.SHACL.MIN_LENGTH_CONSTRAINT_COMPONENT,
                                                                      focusNode,
                                                                      shape is RDFPropertyShape ? ((RDFPropertyShape)shape).Path : null,
                                                                      valueNode,
@@ -97,7 +97,7 @@ namespace RDFSharp.Model
             if (shape != null)
             {
                 //sh:minLength
-                result.AddTriple(new RDFTriple(shape, RDFVocabulary.Shacl.MIN_LENGTH, new RDFTypedLiteral(this.MinLength.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
+                result.AddTriple(new RDFTriple(shape, RDFVocabulary.SHACL.MIN_LENGTH, new RDFTypedLiteral(this.MinLength.ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER)));
             }
             return result;
         }
