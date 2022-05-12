@@ -2042,7 +2042,7 @@ namespace RDFSharp.Semantics.OWL
                 //AxiomAnnotation
                 if (isAxiomAnn)
                     result.AddTriple(new RDFTriple(axiomRepresentative, (RDFResource)te.TaxonomyPredicate.Value, (RDFLiteral)te.TaxonomyObject.Value));
-            };
+            }
 
             //Finds the taxonomy entry represented by the given ID in the ontology taxonomies
             RDFOntologyTaxonomyEntry FindTaxonomyEntry(long teID)
