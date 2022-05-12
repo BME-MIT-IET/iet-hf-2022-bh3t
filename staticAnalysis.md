@@ -45,6 +45,11 @@ Az alábbi Warningokat jelezte a SonarLint:
 
     Kódba égetett URI-k használata nem szerencsés például tesztelhetőségi szempontból.
 
+    Pl.: 
+    ```
+    public static readonly string BASE_URI = "http://www.w3.org/2003/06/sw-vocab-status/ns#";
+    ```
+
 
 - S1104	Fields should not have public accessibility. Make this field 'private' and encapsulate it in a 'public' property.
 
@@ -63,19 +68,54 @@ Az alábbi Warningokat jelezte a SonarLint:
     ```
     A probléma itt a kapcsoszárójel utáni, valószínűleg véletlenül kiírt pontosvessző. Javítás:
 
+    https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/267f073f4da05d12fc59f337fc8c43ae13e5eeb9
     
 
-S112	'System.Exception' should not be thrown by user code.
+- S112	General exceptions should never be thrown. 'System.Exception' should not be thrown by user code.
+
+    A hibák dobásánál minden esetben `System.Exception` típusú hibák kerülnek dobásra, és csak egy string jelzi a hibák valós okát. Ehelyett sokkal célravezetőbb lenne konkrét hibaosztályok használata, például `ArgumentNullEsception`. 
 
 
-S1125	Remove the unnecessary Boolean literal(s).
+- S1125	Boolean literals should not be redundant. Remove the unnecessary Boolean literal(s).
+
+    Az elnevezés szintén magáért beszél, bool literálisok (true, false) felesleges használata történik, ami ugyan általában az olvashatóság és tömörség rovására mehet, a jelzett esetekben mégis egyszerűsíti a kód megértését:
+
+    ```
+    bool disjointSubject = this.Pattern.Subject is RDFVariable ? !row.Table.Columns.Contains(subjectString) : true;
+    ```
+    Ez a kifejezés persze kifejezhető lenne a ?: operator használata nélkül is valahogy így:
+
+    ```
+    bool disjointSubject = !(this.Pattern.Subject is RDFVariable) || !row.Table.Columns.Contains(subjectString);
+    ```
+    Azonban látható, hogy az utóbbi lényegesen nehezebben értelmezhető, így ezeknek a hibáknak a javítását nem tartom célszerűnek.
 
 
-S1168	Return an empty collection instead of null.
+- S1168	Empty arrays and collections should be returned instead of null. Return an empty collection instead of null.
 
+    A null visszatérési érték a hívó függvényben további null ellenőrzéseket okozhat, azonban a projektben ez az alábbi módon fordul elő:
+    ```
+    public RDFShape SelectShape(string shapeName)
+    {
+        if (shapeName != null)
+        {
+            long shapeID = RDFModelUtilities.CreateHash(shapeName);
+            if (this.Shapes.ContainsKey(shapeID))
+                return this.Shapes[shapeID];
+        }
+        return null;
+    }
+    ```
+    Tehát null bemeneti érték esetében adódik csak vissza null, ehelyett talán jobb lenne egyből itt egy ArgumentNullException() dobása.
 
+- S1172	Unused method parameters should be removed.
+    
+    Nem használt függvényparaméterek használata.
 
-S1172	Remove this unused method parameter 'ontGraph'.
+    Lokálisan használt függvények esetén könnyen belátható, hogy a jelölt paraméterek feleslegesek.
+    Javítás: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/9490181e3ef6c27a755deb14b95af827b197a450
+
+    A projekt több helyen tartalmaz még hasonlóan felesleges paramétereket.
 
 
 S125	Remove this commented out code.
@@ -170,3 +210,4 @@ A projekt manuális átvizsgálása során az alábbi code-smellekre, hibákra l
     - stb.
 
     A csapat többi tagjára való tekintettel nem végeztem el a névmódosításokat, mivel párhuzamosan dolgoztunk a különböző feladatokon.
+
