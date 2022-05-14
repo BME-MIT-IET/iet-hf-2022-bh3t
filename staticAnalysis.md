@@ -1,24 +1,34 @@
-@@ -0,0 +1,143 @@
+
 # Statikus analízis és manuális kódátvizsgálás
+
+## Összefoglaló
+
+A feladat során a forráskód átvizsgálására kerül sor mind manuálisan, mind pedig satikus analízis eszközökkel. A talált érdekességeket és hibákat utána megvizsgálni, értelmezni, valamint ezeknek egy részét ténylegesen javítani a kódban.
+
+## Eredmények
+
+A forráskód alapvetően nem tartalmazott általam talált nagyobb hibákat (néhány esettől eltekintve, lásd lejjebb), logikailag helyesen van felépítve.
+
+A statikus analízis során felmerült hibákat mind megnéztem, és ugyan voltak esetek, amikor nem voltak ténylegesen hibásak az adott kódrészetek, többségében valós problémákra derült fény így. Esetenként kifejezetten komoly, másképp (például manuális átvizsgálással) nehezen észrevehető bugok és hibák kerültek javításra.
+
+Ezek alapján a statikus analízist egy nagyon hasznos fejlesztési, ellenőrzési lépésnek tartom, bármely projektnél hasznos lehet egy ilyen eszköz használata.
+
+A következőkben található egy részletesebb leírás a statikus analízis valamint manuális kódátvizsgálás során felmerült hibákról.
 
 ## Statikus analízis
 
-A feladat részeként egy statikus analízis eszközt kellett futtatni a projekten, és a jelzett hibák átnézézsét követően ezeknek egy részét javítani.
+A statikus analízis eszközként a SonarLint-re esett a választásom, részben azért is, mivel a gyakorlatok egyike érintette a használatát. 
 
-A statikus analízis eszközként a SonarLint-re esett a választásom, részben azért is, mivel a gyakorlatok egyike érintette a használatát.
+Ez az eszköz számos Warningot talált a projektben (számszerint összesen 905-öt), azonban ezek nagyrészt ismétlődő hibák vagy stílusbeli problémák voltak, így az egyes hiba típusokat egyszer mutatom csak be, valamint a szükséges javítást sem eszközölöm minden előfordulási helyen.
 
-Ez az eszköz számos Warningot talált a projektben (számszerint összesen 905-öt), azonban ezek nagyrészt ismétlődő hibák voltak, így az egyes hiba típusokat egyszer mutatom csak be, valamint a szükséges javítást sem eszközölöm minden előfordulási helyen, és csak a nem triviális hibák kerülnek javításra.
+Később siekrült összekötni SonarClouddal is a projektet, így a továbbiakban pusholt változtatások által okozott hibák könnyedén ellenőrizhetők lesznek majd SonarCloudban.
 
-
-
-Az alábbi Warningokat jelezte a SonarLint:
-
+Az alábbi hibák merültek fel az analízis során:
 - S101: Types should be named in PascalCase
 
-    Egyonkrét példa: Rename class 'RDFDataSource' to match pascal case naming rules, consider using 'RdfDataSource'.
+    Egy konkrét példa: Rename class 'RDFDataSource' to match pascal case naming rules, consider using 'RdfDataSource'.
 
-    (Ez a warning 281-szer jelent meg különböző osztályoknál, néhany kivételtől eltekintve akkor, ha az adott osztály neve tartalmazza az 'RDF' kulcsszót; ezt a továbbiakban nem jelzem külön, hiszen szinte minden esetben fennáll, hogy ugyanaz a warning többször is előfordult ugyanarra a hibára.)
-
+    Nem javítottam ezt a hibát, de valóban szembemegy a PascalCase konvenciónak, így nem szerencsés ilyen nevek használata.
 - S1066	Collapsible "if" statements should be merged. Merge this if statement with the enclosing one.
 
     Ez a gyakorlatban a következőt jelenti:
@@ -32,7 +42,6 @@ Az alábbi Warningokat jelezte a SonarLint:
     }
     ```
     helyett a következő javasolt:
-
     ```
     if (condition1 && condition2)
     {
@@ -40,7 +49,6 @@ Az alábbi Warningokat jelezte a SonarLint:
     }
     ```
     Ezt a hibát sem javítottuk, mivel egyrészt sok helyen előfordul, másrészt csak szokásbeli különbséget jelent, valamint esetenként kifejezőbbek és átláthatóbbak az if statementek így.
-
 - S1075	URIs should not be hardcoded. Refactor your code not to use hardcoded absolute paths or URIs.
 
     Kódba égetett URI-k használata nem szerencsés például tesztelhetőségi szempontból.
@@ -49,13 +57,9 @@ Az alábbi Warningokat jelezte a SonarLint:
     ```
     public static readonly string BASE_URI = "http://www.w3.org/2003/06/sw-vocab-status/ns#";
     ```
-
-
 - S1104	Fields should not have public accessibility. Make this field 'private' and encapsulate it in a 'public' property.
 
     Osztályok publikus adattagjai clean code elveket sértenek, helyettük jobb publikus property-k használata (Encapsulation).
-
-
 - S1116	Empty statements should be removed. Remove this empty statement.
 
     Triviális hiba, az alábbi helyen fordult elő:
@@ -66,31 +70,21 @@ Az alábbi Warningokat jelezte a SonarLint:
         // ...
     };
     ```
-    A probléma itt a kapcsoszárójel utáni, valószínűleg véletlenül kiírt pontosvessző. Javítás:
-
-    https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/267f073f4da05d12fc59f337fc8c43ae13e5eeb9
-    
-
+    A probléma itt a kapcsoszárójel utáni, valószínűleg véletlenül kiírt pontosvessző. Javítás: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/267f073f4da05d12fc59f337fc8c43ae13e5eeb9
 - S112	General exceptions should never be thrown. 'System.Exception' should not be thrown by user code.
 
-    A hibák dobásánál minden esetben `System.Exception` típusú hibák kerülnek dobásra, és csak egy string jelzi a hibák valós okát. Ehelyett sokkal célravezetőbb lenne konkrét hibaosztályok használata, például `ArgumentNullEsception`. 
-
-
+    A hibák dobásánál minden esetben `System.Exception` típusú hibák kerülnek dobásra, és csak egy string jelzi a hibák valós okát. Ehelyett általában sokkal célravezetőbb lenne konkrét hibaosztályok használata, például `ArgumentNullException`, azonban esetünkben nincsenek olyan beépített `Exception` leszármazottak, amik pontosan illenének a problámékra.
 - S1125	Boolean literals should not be redundant. Remove the unnecessary Boolean literal(s).
 
-    Az elnevezés szintén magáért beszél, bool literálisok (true, false) felesleges használata történik, ami ugyan általában az olvashatóság és tömörség rovására mehet, a jelzett esetekben mégis egyszerűsíti a kód megértését:
-
+    Bool literálisok (true, false) felesleges használata történik, ami ugyan általában a tömörség rovására mehet, a jelzett esetekben mégis egyszerűsíti a kód megértését:
     ```
     bool disjointSubject = this.Pattern.Subject is RDFVariable ? !row.Table.Columns.Contains(subjectString) : true;
     ```
     Ez a kifejezés persze kifejezhető lenne a ?: operator használata nélkül is valahogy így:
-
     ```
     bool disjointSubject = !(this.Pattern.Subject is RDFVariable) || !row.Table.Columns.Contains(subjectString);
     ```
     Azonban látható, hogy az utóbbi lényegesen nehezebben értelmezhető, így ezeknek a hibáknak a javítását nem tartom célszerűnek.
-
-
 - S1168	Empty arrays and collections should be returned instead of null. Return an empty collection instead of null.
 
     A null visszatérési érték a hívó függvényben további null ellenőrzéseket okozhat, azonban a projektben ez az alábbi módon fordul elő:
@@ -106,8 +100,7 @@ Az alábbi Warningokat jelezte a SonarLint:
         return null;
     }
     ```
-    Tehát null bemeneti érték esetében adódik csak vissza null, ehelyett talán jobb lenne egyből itt egy ArgumentNullException() dobása.
-
+    Tehát null bemeneti érték esetében adódik csak vissza null, ehelyett talán jobb lenne egyből itt egy `ArgumentNullException()` dobása.
 - S1172	Unused method parameters should be removed.
     
     Nem használt függvényparaméterek használata.
@@ -116,93 +109,125 @@ Az alábbi Warningokat jelezte a SonarLint:
     Javítás: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/9490181e3ef6c27a755deb14b95af827b197a450
 
     A projekt több helyen tartalmaz még hasonlóan felesleges paramétereket.
+- S125	Sections of code should not be commented out. Remove this commented out code.
 
+    A forráskód kikommentezett kódot tartalmaz, ez nyilvánvalóan felesleges mindegyik előfordulási esetben, nem segítették a kód megoldását, törlésre kerültek:
+    https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/678f877869e99a819a5aaf79a06572bcb4d767f9
+- S1854	Unused assignments should be removed. Remove this useless assignment to local variable 'bufChar'.
+    
+    A kódban egy változónak értéket adunk, majd még azelőtt felülírjuk ezt egy újabb értékadással, hogy a változót máshol használnánk, így az első értékadás felesleges. Javítás: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/366ee37074d11d9a8f176edfb7b75a49a08dd0b4
+- S1905	Redundant casts should not be used. Remove this unnecessary cast to 'RDFResource'.
 
-S125	Remove this commented out code.
+    A kódban felesleges castolás történt, olyan típussra castoltunk, amilyen az adott változó típusa, így ez teljes mértékben felesleges. Javítás:
+    https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/10e04d79ae0068f940da500b74336bb36895375e
+- S2223	Change the visibility of 'SystemString' or make it 'const' or 'readonly'.
 
+    A változók lehetnek readonly-k, így ezeket javítottam a kódban: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/b073c7b67dcf9a14c80c1ead54992c540df4c305
+- S2234	Parameters should be passed in the correct order. Parameters to 'CheckIsTransitiveAssertionOf' have the same names but not the same order as the method arguments.
 
-S1481	Remove the unused local variable 'predUriQName'.
+    A függvény deklarációja a következő:
+    ```
+    public static bool CheckIsTransitiveAssertionOf(this RDFOntologyData data, RDFOntologyFact aFact, RDFOntologyObjectProperty transProp, RDFOntologyFact bFact)
+    {
+        //...
+    }
+    ```
+    Valamint a következő módon kerül meghívásra:
+    ```
+    ontologyData.CheckIsTransitiveAssertionOf(bFact, objProperty, aFact)
+    ```
+    Egyrészt látszik, hogy a függvény paramátereinek nevei nem elég kifejezőek, másrészt az ilyen nevű paramétereket felcserélve kapja meg a függvény (aFact és bFact), aminek okát nem sikerült megértenem.
+- S2259	Null pointers should not be dereferenced. 'subjNode' is null on at least one execution path.
 
+    A hiba által talált hiba a valóságban sosem fordulhat elő vélemémyem szerint, minden ágon inicializálva lesz a kérdéses változó. Elméletileg ugyen előfordulhatnak ágak, amikben ez nem történne meg (ezeket találta meg a statikus analízis), de ezek lehetetlen feltételsorozat következtében fordulnának csak elő. 
+    
+    https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/blob/SonarCloud/RDFSharp/Model/Serializers/RDFXml.cs
+- S2755	XML parsers should not be vulnerable to XXE attacks. Disable access to external entities in XML parsing.
 
-S1854	Remove this useless assignment to local variable 'bufChar'.
+    Az XML szerializáció kódban történő ahasználata sérülékenységekhez vezethet. A problémát az alábbi utolsó sor okozza: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/blob/SonarCloud/RDFSharp/Store/Serializers/RDFTriX.cs#L104-L106
 
+    Az XmlReader biztonságos "by default", azonban a `DtdProcessing = Parse` következtében nem lesz biztonságos.
+    Megoldás talán az jelenthetne, ha a `DtdProcessing = Parse` értékadást kihagynánk, és a default beállításokkal próbálnánk meg a szerializálást a sérülékenységek elkerülése érdekében.
+- S2971	"IEnumerable" LINQs should be simplified. Drop this useless call to 'ToList' or replace it by 'AsEnumerable' if you are using LINQ to Entities.
 
-S1905	Remove this unnecessary cast to 'RDFResource'.
+    Felesleges a ToList() meghívása egy IEnumerable objektumon, ha uténa Any()-t is hívunk. Javitva:
+    https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/0d97c6247499a7c9a117218fe2afb5bff9cf840c
+- S3060 "is" should not be used with "this".	Offload the code that's conditional on this type test to the appropriate subclass and remove the condition.
 
+    A kódban az alábbihoz hasonló esetekkel találkozhatunk:
+    ```
+    internal bool IsGraph() => this is RDFGraph;
+    ```
+    A `this` és az `is` együttes használata szinte minden esetben alapvető objektumorientáltsági problémákra utal, ugyanis a típus kódba égetett tesztelése rugalmatlanná teszi a kódot, későbbi módosítás esetén hibák keletkezhetnek, több helyen kell módosítani a kódot, így ennel használata nem ajánlott. Helyette például polimorfizmust lehetne használni ennek elkerülésére.
+- S3218	Inner class members should not shadow outer class "static" or type members. Rename this field to not shadow the outer class' member with the same name.
+    ```
+     public static class DC
+        {
+            public static readonly string PREFIX = "dc";
+            /* ... */
+            public static class DCAM
+            {
+                public static readonly string PREFIX = "dcam";
+                /* ...
+    ```
+    A fenti példához hasonló esetekkel találkozhatunk, a belső osztály attribútumai ugyanolyan nevet kaptak, mint a befoglaló osztályé. Ez jelen esetben nem okoz hibákat, azonban valóban célszerűbb lenne ezeknek más nevet adni, például `PrefixDcam`.
+- S3247	 Duplicate casts should not be made. Replace this type-check-and-cast sequence with an 'as' and a null check.
 
-S2223	Change the visibility of 'SystemString' or make it 'const' or 'readonly'.
+    Hatékonyabb a kódunk, ha csak 1 castolást végzünk 2 helyett, például a következő esetben:
+    ```
+    if (tObject is RDFResource)
+    {
+        this.AddTriple(new RDFTriple((RDFResource)tSubject, (RDFResource)tPredicate, (RDFResource)tObject));
+    ```
+    helyett:
+    ```
+    var to = tObject as RDFResource;
+    if (to != null)
+    {
+        this.AddTriple(new RDFTriple((RDFResource)tSubject, (RDFResource)tPredicate, to));
+    ```
+- S3267	Loops should be simplified with "LINQ" expressions.
 
+    Ha egy foreach ciklusban if feltétel is van, lehet, hogy a kettő összevonható egy LINQ kifejezéssel, de ez nem hiba, csupán a kód tömörségét segíti.
+- S3358	Extract this nested ternary operation into an independent statement.
 
-S2234	Parameters to 'CheckIsTransitiveAssertionOf' have the same names but not the same order as the method arguments.
+    ?: operátorok (ternary operator) egymásba ágyazása történik, ami szintén nem jelent hibát, azonban nagyban megnehezíti a kód értelmezését.
+- S3442	"abstract" classes should not have "public" constructors. Change the visibility of this constructor to 'private protected'.
 
+    Mivel egy abstract osztály nem példányosítható, nincs értelme `public` vagy `internal` construktoroknak, helyette `private` vagy `protected` kéne, hogy legyen.
+- S3457	Composite format strings should be used correctly. Remove this formatting call and simply use the input string.
 
-S2259	'subjNode' is null on at least one execution path.
+    ```
+    string.Format("text");
+    ```
+    Ehhez hasonló esetekben felesleges a string.Format hívása, javítva: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/8c8681cc6db16b4aa249a91af54051d94f708e8d
+- S3626	Remove this redundant jump.
 
+    Felesleges `continue` használata, de ez nem okoz igazi hibát, valamint a függvény további módosítása során szerephez juthat, ezért nem töröltem.
+- S3897	Classes that provide `Equals(<T>)` should implement `IEquatable<T>`. Implement `IEquatable<RDFMemoryStore>`.
+    
+    Az `RDFMemoryStore` osztályunknak van `Equals(RDFMemoryStore other)` függvénye, azonban nem implementálja az `IEquatable<RDFMemoryStore>` interface-t. 
+- S3973	A conditionally executed single line should be denoted by indentation. Use curly braces or indentation to denote the code conditionally executed by this 'if'
 
+    If után következő sor nem volt beljebb indentálva vagy kapcsos zárójelek közé téve, így ez hibás működést eredményezhetett. **Ez egy valós és jelentős hiba**, így ezt különsen szerencsés, hogy megtaláltuk a statikus analízis során. Javítva: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/8d296cc5219cc24f85502561857ede599a33040e
+- S4136	Method overloads should be grouped together. All 'ToSparqlXmlResult' method overloads should be adjacent. 
 
-S2589	Change this condition so that it does not always evaluate to 'true'.
+    Ugyanazon metódusokat felülíró metódusoknak egymás mellet célszerű lenniük az átláthatóság szempontjából, de egyébként nem okoz hibát a nehezebb megértésen kívül.
+- S4143	Collection elements should not be replaced unconditionally. Verify this is the index/key that was intended; a value has already been set for it.
 
+    https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/blob/SonarCloud/RDFSharp/Model/Serializers/RDFNTriples.cs#L259-L266
 
-S2755	Disable access to external entities in XML parsing.
+    Ez a hibajelzés potenciálisan komoly hibákra deríthetne fényt, hiszen többször egymás után ugyanannak a tömbelemnek adunk értéket, azonban esetünkben minden helyesen történik szerintem, ugyanis az értékadásoknak mind van hatásuk a stringre (egy adott regexre illeszkedő rész kicserélése), így ezek nem hibásak. Kissé szerencsétlen a függvények iyen módon történő használata ebben az esetben, első ránézésre valóban nem egyértelmű, mi is történik valójában.
+- S4201	Null checks should not be used with "is". Remove this unnecessary null check; 'is' returns false for nulls.
 
-
-S2971	Drop this useless call to 'ToList' or replace it by 'AsEnumerable' if you are using LINQ to Entities.
-
-
-S3060	Offload the code that's conditional on this type test to the appropriate subclass and remove the condition.
-
-
-S3218	Rename this field to not shadow the outer class' member with the same name.
-
-
-S3247	Replace this type-check-and-cast sequence with an 'as' and a null check.
-
-
-S3267	Loops should be simplified with "LINQ" expressions
-
-
-S3358	Extract this nested ternary operation into an independent statement.
-
-
-S3442	Change the visibility of this constructor to 'private protected'.
-
-
-S3457	Remove this formatting call and simply use the input string.
-
-
-S3626	Remove this redundant jump.
-
-
-S3897	Implement 'IEquatable<RDFMemoryStore>'.
-
-
-S3973	Use curly braces or indentation to denote the code conditionally executed by this 'if'
-
-
-S4019	Remove or rename that method because it hides 'RDFSharp.Query.RDFQuery.AddModifier<T>(RDFSharp.Query.RDFDistinctModifier)'.
-
-
-S4035	Seal class 'RDFGraph' or implement 'IEqualityComparer<T>' instead.
-
-
-S4136	All 'ToSparqlXmlResult' method overloads should be adjacent.
-
-
-S4143	Verify this is the index/key that was intended; a value has already been set for it.
-
-
-S4201	Remove this unnecessary null check; 'is' returns false for nulls.
-
-
-S927	Rename parameter 'table' to 'tableToFilter' to match the base class declaration.
-
-
-
+    ```
+    if (this.FocusNode != null && this.FocusNode is RDFResource)
+    ```
+    A null checkelés felesleges, hiszen null esetén az `is` false eredményt ad, azonban ez nem okoz hibát, valamint expliciten jelzi, hogy nem lehet null a változó értéke, ami segítheti az egyértelműséget.
 
 ## Manuális kódátvizsgálás:
 
 A projekt manuális átvizsgálása során az alábbi code-smellekre, hibákra lettem figyelmes:
-
 - Sok osztálynév nem triviális rövidítésekből, mozaikszavakból állnak, mint pl.:
 
     - `SWRLB` : W3C Semantic Web Rule Language - BuiltIns vocabulary
@@ -210,4 +235,12 @@ A projekt manuális átvizsgálása során az alábbi code-smellekre, hibákra l
     - stb.
 
     A csapat többi tagjára való tekintettel nem végeztem el a névmódosításokat, mivel párhuzamosan dolgoztunk a különböző feladatokon.
-
+- A kód sok helyen tartalmaz nehezen érthető, nem elég kifejező változóneveket, függvényparamétereket, például:
+    ```
+    public static bool CheckIsTransitiveAssertionOf(this RDFOntologyData data, RDFOntologyFact aFact, RDFOntologyObjectProperty transProp, RDFOntologyFact bFact)
+    {
+        //...
+    }
+    ```
+    Ezeket refatorálva a függvényhívásoknál sokkal magától értetődőbb lenne a paraméterezés.
+- A kódban az osztályok, fieldek és paraméterek elnevezése sokszor nem követi a platform konvenciókat (pl. PascalCase)
