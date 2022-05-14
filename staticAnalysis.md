@@ -101,6 +101,8 @@ Az alábbi hibák merültek fel az analízis során:
     }
     ```
     Tehát null bemeneti érték esetében adódik csak vissza null, ehelyett talán jobb lenne egyből itt egy `ArgumentNullException()` dobása.
+    
+    Ennek a hibának a javítása igazán nehézkes, mivel a hivó függvények logikájában is változásokat okoz a visszatérési érték változása-
 - S1172	Unused method parameters should be removed.
     
     Nem használt függvényparaméterek használata.
@@ -147,7 +149,8 @@ Az alábbi hibák merültek fel az analízis során:
     Az XML szerializáció kódban történő ahasználata sérülékenységekhez vezethet. A problémát az alábbi utolsó sor okozza: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/blob/SonarCloud/RDFSharp/Store/Serializers/RDFTriX.cs#L104-L106
 
     Az XmlReader biztonságos "by default", azonban a `DtdProcessing = Parse` következtében nem lesz biztonságos.
-    Megoldás talán az jelenthetne, ha a `DtdProcessing = Parse` értékadást kihagynánk, és a default beállításokkal próbálnánk meg a szerializálást a sérülékenységek elkerülése érdekében.
+
+    Javítva: https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/6572551fad57396dd4ddb0e6fb4c90259222654e
 - S2971	"IEnumerable" LINQs should be simplified. Drop this useless call to 'ToList' or replace it by 'AsEnumerable' if you are using LINQ to Entities.
 
     Felesleges a ToList() meghívása egy IEnumerable objektumon, ha uténa Any()-t is hívunk. Javitva:
