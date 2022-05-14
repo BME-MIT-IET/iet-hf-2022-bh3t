@@ -29,7 +29,7 @@ namespace RDFSharp.Store
     /// <summary>
     /// RDFMemoryStore represents an in-memory RDF store engine.
     /// </summary>
-    public class RDFMemoryStore : RDFStore, IEnumerable<RDFQuadruple>
+    public class RDFMemoryStore : RDFStore, IEnumerable<RDFQuadruple>, IEquatable<RDFMemoryStore>
     {
         #region Properties
         /// <summary>
@@ -86,6 +86,15 @@ namespace RDFSharp.Store
         /// </summary>
         public override string ToString()
             => string.Concat(base.ToString(), "|ID=", this.StoreGUID);
+
+
+        /// <summary>
+        /// Performs the equality comparison between two memory stores
+        /// </summary>
+        public override bool Equals(object other)
+        {
+            return Equals(other as RDFMemoryStore);
+        }
 
         /// <summary>
         /// Performs the equality comparison between two memory stores
