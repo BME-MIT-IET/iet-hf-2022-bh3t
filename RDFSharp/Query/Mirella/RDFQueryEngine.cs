@@ -881,7 +881,7 @@ namespace RDFSharp.Query
         /// </summary>
         internal DataTable ApplyPattern(RDFPattern pattern, RDFGraph graph)
         {
-            List<RDFTriple> matchingTriples = new List<RDFTriple>();
+            List<RDFTriple> matchingTriples;
             DataTable resultTable = new DataTable();
 
             //SPO pattern

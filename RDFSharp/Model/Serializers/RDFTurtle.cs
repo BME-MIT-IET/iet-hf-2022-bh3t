@@ -453,12 +453,10 @@ namespace RDFSharp.Model
             // the two parsing methods for blank nodes to use
             if (bufChar == '[')
             {
-                bufChar = ReadCodePoint(turtleData, turtleContext);
                 SkipWhitespace(turtleData, turtleContext, result);
                 bufChar = PeekCodePoint(turtleData, turtleContext);
                 if (bufChar == ']')
                 {
-                    bufChar = ReadCodePoint(turtleData, turtleContext);
                     turtleContext.Subject = new RDFResource();
                     SkipWhitespace(turtleData, turtleContext, result);
                     ParsePredicateObjectList(turtleData, turtleContext, result);

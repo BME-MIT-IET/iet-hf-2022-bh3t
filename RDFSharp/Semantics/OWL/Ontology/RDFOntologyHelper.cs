@@ -435,8 +435,8 @@ namespace RDFSharp.Semantics.OWL
         }
         internal static RDFOntologyPropertyModel GetSubPropertiesOfInternal(this RDFOntologyPropertyModel propertyModel, RDFOntologyProperty ontProperty)
         {
-            var result1 = new RDFOntologyPropertyModel();
-            var result2 = new RDFOntologyPropertyModel();
+            RDFOntologyPropertyModel result1;
+            RDFOntologyPropertyModel result2 = new RDFOntologyPropertyModel();
 
             // Step 1: Direct subsumption of "rdfs:subPropertyOf" taxonomy
             result1 = propertyModel.GetSubPropertiesOfInternalVisitor(ontProperty);
@@ -500,8 +500,8 @@ namespace RDFSharp.Semantics.OWL
         }
         internal static RDFOntologyPropertyModel GetSuperPropertiesOfInternal(this RDFOntologyPropertyModel propertyModel, RDFOntologyProperty ontProperty)
         {
-            var result1 = new RDFOntologyPropertyModel();
-            var result2 = new RDFOntologyPropertyModel();
+            RDFOntologyPropertyModel result1;
+            RDFOntologyPropertyModel result2 = new RDFOntologyPropertyModel();
 
             // Step 1: Direct subsumption of "rdfs:subPropertyOf" taxonomy
             result1 = propertyModel.GetSuperPropertiesOfInternalVisitor(ontProperty);
@@ -1994,7 +1994,7 @@ namespace RDFSharp.Semantics.OWL
         internal static RDFGraph ReifyToRDFGraph(this RDFOntologyTaxonomy taxonomy, RDFSemanticsEnums.RDFOntologyInferenceExportBehavior infexpBehavior, string taxonomyName,
             RDFOntologyClassModel ontologyClassModel = null, RDFOntologyPropertyModel ontologyPropertyModel = null, RDFOntologyData ontologyData=null)
         {
-            RDFGraph result = new RDFGraph();
+            RDFGraph result;
 
             switch (taxonomyName)
             {

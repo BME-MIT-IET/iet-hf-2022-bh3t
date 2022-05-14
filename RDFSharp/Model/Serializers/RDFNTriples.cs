@@ -210,8 +210,8 @@ namespace RDFSharp.Model
 
                         #region sanitize  & tokenize
                         //Cleanup previous data
-                        S = null; tokens[0] = string.Empty;
-                        P = null; tokens[1] = string.Empty;
+                        tokens[0] = string.Empty;
+                        tokens[1] = string.Empty;
                         O = null; L = null; tokens[2] = string.Empty;
 
                         //Preliminary sanitizations: clean trailing space-like chars
