@@ -5,7 +5,7 @@
 
 A feladat során a forráskód átvizsgálására kerül sor mind manuálisan, mind pedig satikus analízis eszközökkel. A talált érdekességeket és hibákat utána megvizsgálni, értelmezni, valamint ezeknek egy részét ténylegesen javítani a kódban.
 
-## Eredmények
+## Eredmények és tanulságok
 
 A forráskód alapvetően nem tartalmazott általam talált nagyobb hibákat (néhány esettől eltekintve, lásd lejjebb), logikailag helyesen van felépítve.
 
