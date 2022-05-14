@@ -707,8 +707,8 @@ namespace RDFSharp.Model
                 UnreadCodePoint(turtleData, turtleContext, bufChar);
 
                 // Remember current subject and predicate
-                RDFResource oldSubject = (RDFResource)turtleContext.Subject;
-                RDFResource oldPredicate = (RDFResource)turtleContext.Predicate;
+                RDFResource oldSubject = turtleContext.Subject;
+                RDFResource oldPredicate = turtleContext.Predicate;
 
                 // generated bNode becomes subject
                 turtleContext.Subject = bNode;
