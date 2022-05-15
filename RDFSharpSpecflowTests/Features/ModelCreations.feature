@@ -1,6 +1,15 @@
 ﻿Feature: Model Creation Testing
 
 @mytag
+Scenario: Test the creation of a new RDF Variable
+	Given an RDFVariable with test data
+	Then the RDFVariable has been successfuly created
+ 
+Scenario: Test the creation of a new RDFPattern
+	Given a subject, object, predicate resources
+	When create a pattern with the variables
+	Then the correct pattern should be created successfuly
+
 Scenario: Test the creation of a triple
 	Given a resource https://hu.wikipedia.org/wiki/Bill_Gates
 	And a resource http://xmlns.com/foaf/spec/#term_gender
@@ -21,4 +30,6 @@ Scenario: Test the conversion of a graph into a DataTable
 	And crate 1 empty graphs
 	When graph is converted to a DataTable
 	Then the received DataTable object is correct
+
+
 
