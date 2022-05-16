@@ -76,11 +76,20 @@ namespace RDFSharpSpecflowTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Executing a query to get the phones with the longest battery life")]
         [NUnit.Framework.CategoryAttribute("quereies")]
-        public virtual void ExecutingAQueryToGetThePhonesWithTheLongestBatteryLife()
+        [NUnit.Framework.TestCaseAttribute("3", null)]
+        [NUnit.Framework.TestCaseAttribute("7", null)]
+        [NUnit.Framework.TestCaseAttribute("9", null)]
+        public virtual void ExecutingAQueryToGetThePhonesWithTheLongestBatteryLife(string numOfPhones, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "quereies"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("numOfPhones", numOfPhones);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Executing a query to get the phones with the longest battery life", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -103,20 +112,20 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("a graph with phones and their battery capacity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("a graph with {0} phones and their battery capacity", numOfPhones), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.And("a query that selects the top 3 phones with the longest battery life based on batt" +
-                        "ery capacity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("a query that selects the top {0} phones with the longest battery life based on ba" +
+                            "ttery capacity", numOfPhones), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
  testRunner.When("executing the created query on the graph", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
- testRunner.Then("the result, query and graph objects are not null and result contains 3 objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the result, query and graph objects are not null and result contains {0} objects", numOfPhones), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 11
- testRunner.And("receiving the actual top 3 phones with the longest battery life", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("receiving the actual top {0} phones with the longest battery life", numOfPhones), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -124,12 +133,17 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Executing a query to get the average of temperature values")]
-        public virtual void ExecutingAQueryToGetTheAverageOfTemperatureValues()
+        [NUnit.Framework.TestCaseAttribute("3", "5", null)]
+        [NUnit.Framework.TestCaseAttribute("10", "9", null)]
+        [NUnit.Framework.TestCaseAttribute("55", "111", null)]
+        public virtual void ExecutingAQueryToGetTheAverageOfTemperatureValues(string numOfdays, string numOfTempValues, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("numOfdays", numOfdays);
+            argumentsOfScenario.Add("numOfTempValues", numOfTempValues);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Executing a query to get the average of temperature values", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+#line 19
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -149,23 +163,77 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 14
- testRunner.Given("a graph with 3 days data and 5 temperature value for each day", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 20
+ testRunner.Given(string.Format("a graph with {0} days data and {1} temperature value for each day", numOfdays, numOfTempValues), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 15
+#line 21
  testRunner.And("a query thet selects the days with their temperature values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 22
  testRunner.And("a GroupBy modifier to calculate the average value for each day", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 23
  testRunner.When("executing the created query on the graph", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
- testRunner.Then("the result, query and graph objects are not null and result contains 3 objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
+ testRunner.Then(string.Format("the result, query and graph objects are not null and result contains {0} objects", numOfdays), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 19
- testRunner.And("the average of temperatures should be calculated correctly for 3 day", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And(string.Format("the average of {0} temperatures should be calculated correctly for {1} day", numOfTempValues, numOfdays), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Executing a query to get the maximum temperature for a day")]
+        [NUnit.Framework.TestCaseAttribute("5", "7", null)]
+        [NUnit.Framework.TestCaseAttribute("11", "13", null)]
+        [NUnit.Framework.TestCaseAttribute("88", "99", null)]
+        public virtual void ExecutingAQueryToGetTheMaximumTemperatureForADay(string numOfdays, string numOfTempValues, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("numOfdays", numOfdays);
+            argumentsOfScenario.Add("numOfTempValues", numOfTempValues);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Executing a query to get the maximum temperature for a day", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 33
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 34
+ testRunner.Given(string.Format("a graph with {0} days data and {1} temperature value for each day", numOfdays, numOfTempValues), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 35
+ testRunner.And("a query thet selects the days with their temperature values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+ testRunner.And("a GroupBy modifier to calculate the max value for each day", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+ testRunner.When("executing the created query on the graph", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 38
+ testRunner.Then(string.Format("the result, query and graph objects are not null and result contains {0} objects", numOfdays), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 39
+ testRunner.And(string.Format("the max of {0} temperature values should be determined correctly for {1} day", numOfTempValues, numOfdays), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
