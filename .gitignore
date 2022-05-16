@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 
 # idk what is this (Zsombor)
-project.assets.json
+**/project.assets.json
