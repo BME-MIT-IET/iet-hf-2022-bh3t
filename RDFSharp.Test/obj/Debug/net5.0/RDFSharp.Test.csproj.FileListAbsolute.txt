@@ -1,0 +1,6 @@
+D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp.Test\bin\Debug\net5.0\CoverletSourceRootsMapping
+D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp.Test\obj\Debug\net5.0\RDFSharp.Test.csproj.AssemblyReference.cache
+D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp.Test\obj\Debug\net5.0\RDFSharp.Test.GeneratedMSBuildEditorConfig.editorconfig
+D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp.Test\obj\Debug\net5.0\RDFSharp.Test.AssemblyInfoInputs.cache
+D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp.Test\obj\Debug\net5.0\RDFSharp.Test.AssemblyInfo.cs
+D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp.Test\obj\Debug\net5.0\RDFSharp.Test.csproj.CoreCompileInputs.cache

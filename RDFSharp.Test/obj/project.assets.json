@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net5.0": {
       "AnyOf/0.3.0": {
         "type": "package",
         "compile": {
@@ -203,10 +203,10 @@
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Humanizer.dll": {}
+          "lib/netstandard2.0/Humanizer.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Humanizer.dll": {}
+          "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
       "Humanizer.Core.af/2.14.1": {
@@ -215,7 +215,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/af/Humanizer.resources.dll": {
+          "lib/netstandard2.0/af/Humanizer.resources.dll": {
             "locale": "af"
           }
         }
@@ -226,7 +226,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/ar/Humanizer.resources.dll": {
+          "lib/netstandard2.0/ar/Humanizer.resources.dll": {
             "locale": "ar"
           }
         }
@@ -237,7 +237,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/az/Humanizer.resources.dll": {
+          "lib/netstandard2.0/az/Humanizer.resources.dll": {
             "locale": "az"
           }
         }
@@ -248,7 +248,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/bg/Humanizer.resources.dll": {
+          "lib/netstandard2.0/bg/Humanizer.resources.dll": {
             "locale": "bg"
           }
         }
@@ -259,7 +259,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/bn-BD/Humanizer.resources.dll": {
+          "lib/netstandard2.0/bn-BD/Humanizer.resources.dll": {
             "locale": "bn-BD"
           }
         }
@@ -270,7 +270,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/cs/Humanizer.resources.dll": {
+          "lib/netstandard2.0/cs/Humanizer.resources.dll": {
             "locale": "cs"
           }
         }
@@ -281,7 +281,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/da/Humanizer.resources.dll": {
+          "lib/netstandard2.0/da/Humanizer.resources.dll": {
             "locale": "da"
           }
         }
@@ -292,7 +292,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/de/Humanizer.resources.dll": {
+          "lib/netstandard2.0/de/Humanizer.resources.dll": {
             "locale": "de"
           }
         }
@@ -303,7 +303,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/el/Humanizer.resources.dll": {
+          "lib/netstandard2.0/el/Humanizer.resources.dll": {
             "locale": "el"
           }
         }
@@ -314,7 +314,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/es/Humanizer.resources.dll": {
+          "lib/netstandard2.0/es/Humanizer.resources.dll": {
             "locale": "es"
           }
         }
@@ -325,7 +325,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/fa/Humanizer.resources.dll": {
+          "lib/netstandard2.0/fa/Humanizer.resources.dll": {
             "locale": "fa"
           }
         }
@@ -336,7 +336,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/fi-FI/Humanizer.resources.dll": {
+          "lib/netstandard2.0/fi-FI/Humanizer.resources.dll": {
             "locale": "fi-FI"
           }
         }
@@ -347,7 +347,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/fr/Humanizer.resources.dll": {
+          "lib/netstandard2.0/fr/Humanizer.resources.dll": {
             "locale": "fr"
           }
         }
@@ -358,7 +358,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/fr-BE/Humanizer.resources.dll": {
+          "lib/netstandard2.0/fr-BE/Humanizer.resources.dll": {
             "locale": "fr-BE"
           }
         }
@@ -369,7 +369,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/he/Humanizer.resources.dll": {
+          "lib/netstandard2.0/he/Humanizer.resources.dll": {
             "locale": "he"
           }
         }
@@ -380,7 +380,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/hr/Humanizer.resources.dll": {
+          "lib/netstandard2.0/hr/Humanizer.resources.dll": {
             "locale": "hr"
           }
         }
@@ -391,7 +391,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/hu/Humanizer.resources.dll": {
+          "lib/netstandard2.0/hu/Humanizer.resources.dll": {
             "locale": "hu"
           }
         }
@@ -402,7 +402,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/hy/Humanizer.resources.dll": {
+          "lib/netstandard2.0/hy/Humanizer.resources.dll": {
             "locale": "hy"
           }
         }
@@ -413,7 +413,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/id/Humanizer.resources.dll": {
+          "lib/netstandard2.0/id/Humanizer.resources.dll": {
             "locale": "id"
           }
         }
@@ -424,7 +424,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/is/Humanizer.resources.dll": {
+          "lib/netstandard2.0/is/Humanizer.resources.dll": {
             "locale": "is"
           }
         }
@@ -435,7 +435,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/it/Humanizer.resources.dll": {
+          "lib/netstandard2.0/it/Humanizer.resources.dll": {
             "locale": "it"
           }
         }
@@ -446,7 +446,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/ja/Humanizer.resources.dll": {
+          "lib/netstandard2.0/ja/Humanizer.resources.dll": {
             "locale": "ja"
           }
         }
@@ -468,7 +468,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/ku/Humanizer.resources.dll": {
+          "lib/netstandard2.0/ku/Humanizer.resources.dll": {
             "locale": "ku"
           }
         }
@@ -479,7 +479,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/lv/Humanizer.resources.dll": {
+          "lib/netstandard2.0/lv/Humanizer.resources.dll": {
             "locale": "lv"
           }
         }
@@ -512,7 +512,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/nb/Humanizer.resources.dll": {
+          "lib/netstandard2.0/nb/Humanizer.resources.dll": {
             "locale": "nb"
           }
         }
@@ -523,7 +523,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/nb-NO/Humanizer.resources.dll": {
+          "lib/netstandard2.0/nb-NO/Humanizer.resources.dll": {
             "locale": "nb-NO"
           }
         }
@@ -534,7 +534,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/nl/Humanizer.resources.dll": {
+          "lib/netstandard2.0/nl/Humanizer.resources.dll": {
             "locale": "nl"
           }
         }
@@ -545,7 +545,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/pl/Humanizer.resources.dll": {
+          "lib/netstandard2.0/pl/Humanizer.resources.dll": {
             "locale": "pl"
           }
         }
@@ -556,7 +556,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/pt/Humanizer.resources.dll": {
+          "lib/netstandard2.0/pt/Humanizer.resources.dll": {
             "locale": "pt"
           }
         }
@@ -567,7 +567,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/ro/Humanizer.resources.dll": {
+          "lib/netstandard2.0/ro/Humanizer.resources.dll": {
             "locale": "ro"
           }
         }
@@ -578,7 +578,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/ru/Humanizer.resources.dll": {
+          "lib/netstandard2.0/ru/Humanizer.resources.dll": {
             "locale": "ru"
           }
         }
@@ -589,7 +589,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/sk/Humanizer.resources.dll": {
+          "lib/netstandard2.0/sk/Humanizer.resources.dll": {
             "locale": "sk"
           }
         }
@@ -600,7 +600,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/sl/Humanizer.resources.dll": {
+          "lib/netstandard2.0/sl/Humanizer.resources.dll": {
             "locale": "sl"
           }
         }
@@ -611,7 +611,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/sr/Humanizer.resources.dll": {
+          "lib/netstandard2.0/sr/Humanizer.resources.dll": {
             "locale": "sr"
           }
         }
@@ -622,7 +622,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/sr-Latn/Humanizer.resources.dll": {
+          "lib/netstandard2.0/sr-Latn/Humanizer.resources.dll": {
             "locale": "sr-Latn"
           }
         }
@@ -633,7 +633,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/sv/Humanizer.resources.dll": {
+          "lib/netstandard2.0/sv/Humanizer.resources.dll": {
             "locale": "sv"
           }
         }
@@ -655,7 +655,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/tr/Humanizer.resources.dll": {
+          "lib/netstandard2.0/tr/Humanizer.resources.dll": {
             "locale": "tr"
           }
         }
@@ -666,7 +666,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/uk/Humanizer.resources.dll": {
+          "lib/netstandard2.0/uk/Humanizer.resources.dll": {
             "locale": "uk"
           }
         }
@@ -677,7 +677,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/uz-Cyrl-UZ/Humanizer.resources.dll": {
+          "lib/netstandard2.0/uz-Cyrl-UZ/Humanizer.resources.dll": {
             "locale": "uz-Cyrl-UZ"
           }
         }
@@ -688,7 +688,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/uz-Latn-UZ/Humanizer.resources.dll": {
+          "lib/netstandard2.0/uz-Latn-UZ/Humanizer.resources.dll": {
             "locale": "uz-Latn-UZ"
           }
         }
@@ -699,7 +699,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/vi/Humanizer.resources.dll": {
+          "lib/netstandard2.0/vi/Humanizer.resources.dll": {
             "locale": "vi"
           }
         }
@@ -710,7 +710,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/zh-CN/Humanizer.resources.dll": {
+          "lib/netstandard2.0/zh-CN/Humanizer.resources.dll": {
             "locale": "zh-CN"
           }
         }
@@ -721,7 +721,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/zh-Hans/Humanizer.resources.dll": {
+          "lib/netstandard2.0/zh-Hans/Humanizer.resources.dll": {
             "locale": "zh-Hans"
           }
         }
@@ -732,7 +732,7 @@
           "Humanizer.Core": "[2.14.1]"
         },
         "resource": {
-          "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
+          "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
           }
         }
@@ -1423,10 +1423,10 @@
       "Stef.Validation/0.1.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Stef.Validation.dll": {}
+          "lib/net5.0/Stef.Validation.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Stef.Validation.dll": {}
+          "lib/net5.0/Stef.Validation.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -1864,10 +1864,10 @@
       "System.Linq.Dynamic.Core/1.2.18": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Linq.Dynamic.Core.dll": {}
+          "lib/net5.0/System.Linq.Dynamic.Core.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Linq.Dynamic.Core.dll": {}
+          "lib/net5.0/System.Linq.Dynamic.Core.dll": {}
         }
       },
       "System.Linq.Expressions/4.3.0": {
@@ -2566,10 +2566,10 @@
           "XPath2.Extensions": "1.1.2"
         },
         "compile": {
-          "lib/net6.0/WireMock.Net.dll": {}
+          "lib/net5.0/WireMock.Net.dll": {}
         },
         "runtime": {
-          "lib/net6.0/WireMock.Net.dll": {}
+          "lib/net5.0/WireMock.Net.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -2617,8 +2617,9 @@
       },
       "RDFSharp/2.26.1": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v1.4",
         "dependencies": {
+          "NETStandard.Library": "1.6.1",
           "System.Data.DataSetExtensions": "4.5.0"
         },
         "compile": {
@@ -4396,7 +4397,6 @@
       "path": "microsoft.win32.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4747,7 +4747,6 @@
       "path": "netstandard.library/1.6.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "netstandard.library.1.6.1.nupkg.sha512",
@@ -4829,7 +4828,6 @@
       "path": "runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -4843,7 +4841,6 @@
       "path": "runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -4857,7 +4854,6 @@
       "path": "runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -4871,7 +4867,6 @@
       "path": "runtime.native.system/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -4885,7 +4880,6 @@
       "path": "runtime.native.system.io.compression/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -4899,7 +4893,6 @@
       "path": "runtime.native.system.net.http/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -4913,7 +4906,6 @@
       "path": "runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -4927,7 +4919,6 @@
       "path": "runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -4941,7 +4932,6 @@
       "path": "runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -4955,7 +4945,6 @@
       "path": "runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -4969,7 +4958,6 @@
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
@@ -4983,7 +4971,6 @@
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -4997,7 +4984,6 @@
       "path": "runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -5011,7 +4997,6 @@
       "path": "runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -5025,7 +5010,6 @@
       "path": "runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -5039,7 +5023,6 @@
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -5107,7 +5090,6 @@
       "path": "system.appcontext/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5162,7 +5144,6 @@
       "path": "system.buffers/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.1/.xml",
@@ -5177,7 +5158,6 @@
       "path": "system.collections/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5245,7 +5225,6 @@
       "path": "system.collections.concurrent/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5313,7 +5292,6 @@
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5352,7 +5330,6 @@
       "path": "system.collections.specialized/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5391,7 +5368,6 @@
       "path": "system.componentmodel/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5450,7 +5426,6 @@
       "path": "system.componentmodel.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5489,7 +5464,6 @@
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5542,7 +5516,6 @@
       "path": "system.console/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5599,7 +5572,6 @@
       "path": "system.diagnostics.debug/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5667,7 +5639,6 @@
       "path": "system.diagnostics.diagnosticsource/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net46/System.Diagnostics.DiagnosticSource.dll",
@@ -5727,7 +5698,6 @@
       "path": "system.diagnostics.tools/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5825,7 +5795,6 @@
       "path": "system.diagnostics.tracing/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5915,7 +5884,6 @@
       "path": "system.globalization/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5983,7 +5951,6 @@
       "path": "system.globalization.calendars/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6021,7 +5988,6 @@
       "path": "system.globalization.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6081,7 +6047,6 @@
       "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6162,7 +6127,6 @@
       "path": "system.io.compression/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6233,7 +6197,6 @@
       "path": "system.io.compression.zipfile/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6272,7 +6235,6 @@
       "path": "system.io.filesystem/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6310,7 +6272,6 @@
       "path": "system.io.filesystem.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6349,7 +6310,6 @@
       "path": "system.linq/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6469,7 +6429,6 @@
       "path": "system.linq.expressions/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6635,7 +6594,6 @@
       "path": "system.net.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6714,7 +6672,6 @@
       "path": "system.net.sockets/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6752,7 +6709,6 @@
       "path": "system.objectmodel/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6822,7 +6778,6 @@
       "path": "system.reflection/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6903,7 +6858,6 @@
       "path": "system.reflection.emit/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6939,7 +6893,6 @@
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -6984,7 +6937,6 @@
       "path": "system.reflection.emit.lightweight/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7029,7 +6981,6 @@
       "path": "system.reflection.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7107,7 +7058,6 @@
       "path": "system.reflection.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7164,7 +7114,6 @@
       "path": "system.reflection.typeextensions/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7218,7 +7167,6 @@
       "path": "system.resources.resourcemanager/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7275,7 +7223,6 @@
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7367,7 +7314,6 @@
       "path": "system.runtime.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7448,7 +7394,6 @@
       "path": "system.runtime.handles/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7486,7 +7431,6 @@
       "path": "system.runtime.interopservices/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7579,7 +7523,6 @@
       "path": "system.runtime.interopservices.runtimeinformation/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7614,7 +7557,6 @@
       "path": "system.runtime.numerics/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7671,7 +7613,6 @@
       "path": "system.security.cryptography.algorithms/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7775,7 +7716,6 @@
       "path": "system.security.cryptography.csp/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7807,7 +7747,6 @@
       "path": "system.security.cryptography.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7848,7 +7787,6 @@
       "path": "system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.6/System.Security.Cryptography.OpenSsl.dll",
@@ -7864,7 +7802,6 @@
       "path": "system.security.cryptography.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7893,7 +7830,6 @@
       "path": "system.security.cryptography.x509certificates/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7949,7 +7885,6 @@
       "path": "system.text.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8017,7 +7952,6 @@
       "path": "system.text.encoding.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8085,7 +8019,6 @@
       "path": "system.text.regularexpressions/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8169,7 +8102,6 @@
       "path": "system.threading/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8240,7 +8172,6 @@
       "path": "system.threading.tasks/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8308,7 +8239,6 @@
       "path": "system.threading.tasks.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
@@ -8325,7 +8255,6 @@
       "path": "system.threading.timer/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8380,7 +8309,6 @@
       "path": "system.xml.readerwriter/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8452,7 +8380,6 @@
       "path": "system.xml.xdocument/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8665,7 +8592,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net5.0": [
       "MSTest.TestAdapter >= 2.2.9",
       "MSTest.TestFramework >= 2.2.9",
       "Microsoft.NET.Test.Sdk >= 17.1.0",
@@ -8675,39 +8602,41 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tothz\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Panka\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "2.26.1",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
+      "projectUniqueName": "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
       "projectName": "RDFSharp.Test",
-      "projectPath": "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
-      "packagesPath": "C:\\Users\\tothz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp.Test\\obj\\",
+      "projectPath": "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
+      "packagesPath": "C:\\Users\\Panka\\.nuget\\packages\\",
+      "outputPath": "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tothz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Panka\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {
-              "projectPath": "C:\\Users\\tothz\\source\\repos\\BME-MIT-IET\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj"
+            "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {
+              "projectPath": "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj"
             }
           }
         }
@@ -8719,8 +8648,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net5.0": {
+        "targetAlias": "net5.0",
         "dependencies": {
           "MSTest.TestAdapter": {
             "target": "Package",
@@ -8760,7 +8689,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }
