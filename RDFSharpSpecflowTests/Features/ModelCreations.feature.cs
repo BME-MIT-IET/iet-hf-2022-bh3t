@@ -35,8 +35,8 @@ namespace RDFSharpSpecflowTests.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Model Creation Testing", "Testing different models in the RDFSharp project e.g:\r\n- RDFVariable\r\n- RDFPatter" +
-                    "n\r\n- RDFTriple\r\n- RDFGraph", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Model Creation Testing", "Testing different models in the RDFSharp project:\r\n- RDFVariable\r\n- RDFPattern\r\n-" +
+                    " RDFTriple\r\n- RDFGraph\r\n- Conversion the Graph into a DataTable", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,11 +76,9 @@ namespace RDFSharpSpecflowTests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Test the creation of a new RDF Variable")]
-        [NUnit.Framework.CategoryAttribute("models")]
         public virtual void TestTheCreationOfANewRDFVariable()
         {
-            string[] tagsOfScenario = new string[] {
-                    "models"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test the creation of a new RDF Variable", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 10

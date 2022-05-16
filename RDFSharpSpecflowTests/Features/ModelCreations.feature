@@ -1,12 +1,12 @@
 ﻿Feature: Model Creation Testing
 
-Testing different models in the RDFSharp project e.g:
+Testing different models in the RDFSharp project:
 - RDFVariable
 - RDFPattern
 - RDFTriple
 - RDFGraph
+- Conversion the Graph into a DataTable
 
-@models
 Scenario: Test the creation of a new RDF Variable
 	Given an RDFVariable with test data
 	Then the RDFVariable has been successfuly created

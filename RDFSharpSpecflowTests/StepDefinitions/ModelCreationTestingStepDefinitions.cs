@@ -2,22 +2,23 @@ using RDFSharp.Query;
 using System;
 using System.Data;
 using TechTalk.SpecFlow;
+using static RDFSharp.Model.RDFVocabulary;
 
 namespace RDFSharpSpecflowTests.StepDefinitions
 {
     [Binding]
     public class ModelCreationTestingStepDefinitions
     {
-        private readonly ScenarioContext? scenarioContext;
+        private readonly ScenarioContext scenarioContext;
 
         private readonly List<RDFResource> resources = new List<RDFResource>();
-        private RDFPlainLiteral? plainLiteral;
-        private RDFTriple? triple;
+        private RDFPlainLiteral plainLiteral;
+        private RDFTriple triple;
         private RDFTriple[] triples;
-        private RDFGraph[]? graphs;
+        private RDFGraph[] graphs;
         private DataTable dataTable;
 
-        private RDFVariable? rdfVar;
+        private RDFVariable rdfVar;
         private RDFVariable testVar1, testVar2, testVar3;
         private RDFPattern pattern;
 
@@ -59,9 +60,9 @@ namespace RDFSharpSpecflowTests.StepDefinitions
             {
                 int id = i + 1;
                 triples[i] = new RDFTriple(
-                    new RDFResource(String.Format("http://subject.com/{0}", id)),
-                    new RDFResource(String.Format("http://predicate.com/{0}", id)),
-                    new RDFResource(String.Format("http://object.com/{0}", id))
+                    new RDFResource(RDF.BASE_URI + "/subject" + i),
+                    new RDFResource(RDF.BASE_URI + "/predicate" + i),
+                    new RDFResource(RDF.BASE_URI + "/object" + i)
                 );
             }
         }
@@ -106,9 +107,9 @@ namespace RDFSharpSpecflowTests.StepDefinitions
         {
             foreach (DataRow row in dataTable.Rows)
             {
-                Assert.IsTrue(row[0].ToString() == "http://subject.com/0");
-                Assert.IsTrue(row[1].ToString() == "http://predicate.com/0");
-                Assert.IsTrue(row[2].ToString() == "http://object.com/0");
+                Assert.IsTrue(row[0].ToString() == RDF.BASE_URI + "/subject0");
+                Assert.IsTrue(row[1].ToString() == RDF.BASE_URI + "/subject0");
+                Assert.IsTrue(row[2].ToString() == RDF.BASE_URI + "/subject0");
             }
         }
 

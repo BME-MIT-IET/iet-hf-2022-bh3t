@@ -20,8 +20,11 @@ namespace RDFSharpSpecflowTests.StepDefinitions
             for (int i = 0; i < numOfPhones; i++)
             {
                 RDFResource phone = new RDFResource(RDF.BASE_URI + "phone" + i);
-                RDFTypedLiteral batteryCapacity = new RDFTypedLiteral((4000 + i * 500).ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER);
-                graph.AddTriple(new RDFTriple(phone, new RDFResource(RDF.BASE_URI + "batteryCapacity"), batteryCapacity));
+                string value = (4000 + i * 500).ToString();
+                RDFTypedLiteral batteryCapacity = new RDFTypedLiteral(value, RDFModelEnums.RDFDatatypes.XSD_INTEGER);
+                RDFResource predicate = new RDFResource(RDF.BASE_URI + "batteryCapacity");
+
+                graph.AddTriple(new RDFTriple(phone, predicate, batteryCapacity));
             }
         }
 
@@ -30,11 +33,16 @@ namespace RDFSharpSpecflowTests.StepDefinitions
         {
             query = new RDFSelectQuery();
 
-            var phone = new RDFVariable("phone");
-            var batteryCapacity = new RDFVariable("batteryCapacity");
-            var patternGroup = new RDFPatternGroup("PatternGroup").AddPattern(new RDFPattern(phone, new RDFResource(RDF.BASE_URI + "batteryCapacity"), batteryCapacity));
+            RDFVariable phone = new RDFVariable("phone");
+            RDFVariable batteryCapacity = new RDFVariable("batteryCapacity");
+            RDFResource predicate = new RDFResource(RDF.BASE_URI + "batteryCapacity");
+            RDFPatternGroup patternGroup = new RDFPatternGroup("PatternGroup");
 
-            query.AddPatternGroup(patternGroup).AddProjectionVariable(phone).AddProjectionVariable(batteryCapacity);
+            patternGroup.AddPattern(new RDFPattern(phone, predicate, batteryCapacity));
+
+            query.AddPatternGroup(patternGroup);
+            query.AddProjectionVariable(phone);
+            query.AddProjectionVariable(batteryCapacity);
             query.AddModifier(new RDFLimitModifier(tops));
             query.AddModifier(new RDFOrderByModifier(batteryCapacity, RDFQueryEnums.RDFOrderByFlavors.DESC));
         }
@@ -77,11 +85,12 @@ namespace RDFSharpSpecflowTests.StepDefinitions
 
             for (int i = 0; i < numOfDays; i++)
             {
-                var day = new RDFResource(RDF.BASE_URI + "day" + i);
+                RDFResource day = new RDFResource(RDF.BASE_URI + "day" + i);
 
                 for (int j = 0; j < numOfTempValues; j++)
                 {
-                    var tempLiteral = new RDFTypedLiteral((20 + i * 2 + j * 2).ToString(), RDFModelEnums.RDFDatatypes.XSD_INTEGER);
+                    string temp = (20 + i * 2 + j * 2).ToString();
+                    RDFTypedLiteral tempLiteral = new RDFTypedLiteral(temp, RDFModelEnums.RDFDatatypes.XSD_INTEGER);
                     graph.AddTriple(new RDFTriple(day, RDF.VALUE, tempLiteral));
                 }
             }
@@ -91,21 +100,23 @@ namespace RDFSharpSpecflowTests.StepDefinitions
         public void GivenAQueryThetSelectsTheDaysWithTheirTemperatureValues()
         {
             query = new RDFSelectQuery();
-            var day = new RDFVariable("day");
-            var temperature = new RDFVariable("temperature");
-            query.AddPatternGroup(new RDFPatternGroup("PatternGroup").AddPattern(new RDFPattern(day, RDF.VALUE, temperature)))
-                .AddProjectionVariable(day)
-                .AddProjectionVariable(temperature);
+            RDFVariable day = new RDFVariable("day");
+            RDFVariable temperature = new RDFVariable("temperature");
+
+            query.AddPatternGroup(new RDFPatternGroup("PatternGroup").AddPattern(new RDFPattern(day, RDF.VALUE, temperature)));
+            query.AddProjectionVariable(day);
+            query.AddProjectionVariable(temperature);
 
         }
 
         [Given(@"a GroupBy modifier to calculate the average value for each day")]
         public void GivenAGroupByModifierToCalculateTheAverageValueForEachDay()
         {
-            var student = new RDFVariable("day");
-            var grade = new RDFVariable("temperature");
-            var groupByModifier = new RDFGroupByModifier(new List<RDFVariable>() { student })
-                .AddAggregator(new RDFAvgAggregator(grade, new RDFVariable("avarage")));
+            RDFVariable day = new RDFVariable("day");
+            RDFVariable temp = new RDFVariable("temperature");
+            RDFGroupByModifier groupByModifier = new RDFGroupByModifier(new List<RDFVariable>() { day });
+
+            groupByModifier.AddAggregator(new RDFAvgAggregator(temp, new RDFVariable("avarage")));
             query.AddModifier(groupByModifier);
         }
 
@@ -123,10 +134,11 @@ namespace RDFSharpSpecflowTests.StepDefinitions
         [Given(@"a GroupBy modifier to calculate the max value for each day")]
         public void GivenAGroupByModifierToCalculateTheMaxValueForEachDay()
         {
-            var day = new RDFVariable("day");
-            var temp = new RDFVariable("temperature");
-            var groupByModifier = new RDFGroupByModifier(new List<RDFVariable>() { day })
-                .AddAggregator(new RDFMaxAggregator(temp, new RDFVariable("max"), RDFQueryEnums.RDFMinMaxAggregatorFlavors.Numeric));
+            RDFVariable day = new RDFVariable("day");
+            RDFVariable temp = new RDFVariable("temperature");
+            RDFGroupByModifier groupByModifier = new RDFGroupByModifier(new List<RDFVariable>() { day });
+
+            groupByModifier.AddAggregator(new RDFMaxAggregator(temp, new RDFVariable("max"), RDFQueryEnums.RDFMinMaxAggregatorFlavors.Numeric));
             query.AddModifier(groupByModifier);
         }
 

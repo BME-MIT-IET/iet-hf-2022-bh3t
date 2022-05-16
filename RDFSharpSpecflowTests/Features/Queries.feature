@@ -1,8 +1,10 @@
 ﻿Feature: Queries
 
-Testing different queries on the RDFSharp project
+Testing different queries on the RDFSharp project:
+- find max 3 values
+- calculating average
+- determin max value
 
-@quereies
 Scenario Outline: Executing a query to get the phones with the longest battery life
 	Given a graph with <numOfPhones> phones and their battery capacity
 	And a query that selects the top <numOfPhones> phones with the longest battery life based on battery capacity
