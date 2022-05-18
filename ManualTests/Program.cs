@@ -126,6 +126,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success");
                             var donaldduck = new RDFResource("http://www.waltdisney.com/donald_duck");
                             Console.WriteLine(donaldduck);
                         }
@@ -141,6 +142,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Empty resource");
                             var disney = new RDFResource("");
                             Console.WriteLine(disney);
                         }
@@ -155,6 +157,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Exception");
                             var mickey = new RDFResource("MickeyMouse");
                             Console.WriteLine(mickey);
                         }
@@ -169,6 +172,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Empty resource");
                             var disney_group = new RDFResource();
                             Console.WriteLine(disney_group);
                         }
@@ -281,6 +285,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success");
                             var donaldduck_name = new RDFPlainLiteral("Donald Duck");
                             Console.WriteLine(donaldduck_name);
                         }
@@ -295,6 +300,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success (with empty string)");
                             var donaldduck_withoutname = new RDFPlainLiteral("");
                             Console.WriteLine(donaldduck_withoutname);
 
@@ -310,6 +316,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success");
                             var donaldduck_name_enus = new RDFPlainLiteral("Donald Duck", "en-US");
                             Console.WriteLine(donaldduck_name_enus);
                         }
@@ -324,6 +331,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success (empty language tag)");
                             var donaldduck_name_withoutenus = new RDFPlainLiteral("Donald Duck", "");
                             Console.WriteLine(donaldduck_name_withoutenus);
                         }
@@ -338,6 +346,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success (with empty string)");
                             var notdonaldduck_name_enus = new RDFPlainLiteral("", "en-US");
                             Console.WriteLine(notdonaldduck_name_enus);
                         }
@@ -352,6 +361,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success (with empty string and empty language tag)");
                             var notdonaldduck_name_notenus = new RDFPlainLiteral("", "");
                             Console.WriteLine(notdonaldduck_name_notenus);
                         }
@@ -366,6 +376,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success");
                             var mickeymouse_age = new RDFTypedLiteral("85", RDFModelEnums.RDFDatatypes.XSD_INTEGER);
                             Console.WriteLine(mickeymouse_age);
                         }
@@ -380,6 +391,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Exception");
                             var mickeymouse_noage = new RDFTypedLiteral("", RDFModelEnums.RDFDatatypes.XSD_INTEGER);
                             Console.WriteLine(mickeymouse_noage);
                         }
@@ -394,6 +406,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Exception");
                             var mickeymouse_strage = new RDFTypedLiteral("eighty", RDFModelEnums.RDFDatatypes.XSD_INTEGER);
                             Console.WriteLine(mickeymouse_strage);
                         }
@@ -455,6 +468,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success");
                             RDFTriple mickeymouse_is85yr = new RDFTriple(
                              new RDFResource("http://www.waltdisney.com/mickey_mouse"),
                              new RDFResource("http://xmlns.com/foaf/0.1/age"),
@@ -471,6 +485,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Exception");
                             RDFTriple mickeymouse_ = new RDFTriple(
                              new RDFResource(""),
                              new RDFResource(""),
@@ -504,13 +519,25 @@ namespace ManualTests
                 {
                     case "1":
                         {
-                            CreateTriples(1);
+                            CreateGraph(1);
                             break;
                         }
 
                     case "2":
                         {
-                            CreateTriples(2);
+                            CreateGraph(2);
+                            break;
+                        }
+
+                    case "3":
+                        {
+                            CreateGraph(3);
+                            break;
+                        }
+
+                    case "4":
+                        {
+                            CreateGraph(4);
                             break;
                         }
 
@@ -537,6 +564,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success");
                             var waltdisney = new RDFGraph();
                             Console.WriteLine(waltdisney);
                         }
@@ -550,6 +578,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success");
                             RDFTriple mickeymouse_is85yr = new RDFTriple(
                              new RDFResource("http://www.waltdisney.com/mickey_mouse"),
                              new RDFResource("http://xmlns.com/foaf/0.1/age"),
@@ -576,6 +605,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success");
                             var waltdisney = new RDFGraph();
                             waltdisney.SetContext(new Uri("http://waltdisney.com/"));
                             Console.WriteLine(waltdisney);
@@ -591,6 +621,7 @@ namespace ManualTests
                     {
                         try
                         {
+                            Console.WriteLine("Expectation: Success");
                             RDFTriple donaldduck_name_enus_triple = new RDFTriple(
                                 new RDFResource("http://www.waltdisney.com/donald_duck"),
                                 new RDFResource("http://xmlns.com/foaf/0.1/name"),
@@ -604,6 +635,7 @@ namespace ManualTests
                             var waltdisney_list = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus_triple });
 
                             var waltdisney_table = waltdisney_list.ToDataTable();
+                            Console.WriteLine(waltdisney_table);
 
                         }
                         catch (Exception e)

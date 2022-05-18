@@ -10,3 +10,15 @@ D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandar
 D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.pdb
 D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.csproj.AssemblyReference.cache
 D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.GeneratedMSBuildEditorConfig.editorconfig
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\bin\Debug\netstandard2.0\RDFSharp.xml
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\bin\Debug\netstandard2.0\RDFSharp.deps.json
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\bin\Debug\netstandard2.0\RDFSharp.dll
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\bin\Debug\netstandard2.0\RDFSharp.pdb
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.csproj.AssemblyReference.cache
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.GeneratedMSBuildEditorConfig.editorconfig
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.AssemblyInfoInputs.cache
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.AssemblyInfo.cs
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.csproj.CoreCompileInputs.cache
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.sourcelink.json
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.dll
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\RDFSharp\obj\Debug\netstandard2.0\RDFSharp.pdb

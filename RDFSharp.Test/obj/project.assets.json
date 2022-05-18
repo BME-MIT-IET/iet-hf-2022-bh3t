@@ -2617,9 +2617,8 @@
       },
       "RDFSharp/2.26.1": {
         "type": "project",
-        "framework": ".NETStandard,Version=v1.4",
+        "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "NETStandard.Library": "1.6.1",
           "System.Data.DataSetExtensions": "4.5.0"
         },
         "compile": {
@@ -8602,26 +8601,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Panka\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Panka\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "2.26.1",
     "restore": {
-      "projectUniqueName": "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
+      "projectUniqueName": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
       "projectName": "RDFSharp.Test",
-      "projectPath": "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
+      "projectPath": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
       "packagesPath": "C:\\Users\\Panka\\.nuget\\packages\\",
-      "outputPath": "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp.Test\\obj\\",
+      "outputPath": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp.Test\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\Panka\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8635,8 +8627,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {
-              "projectPath": "D:\\PANKA\\07SULI\\6felev\\Intelltech\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj"
+            "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {
+              "projectPath": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj"
             }
           }
         }
@@ -8689,7 +8681,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

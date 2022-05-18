@@ -14,3 +14,23 @@ D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\
 D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ref\ManualTests.dll
 D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.pdb
 D:\PANKA\07SULI\6felev\Intelltech\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.genruntimeconfig.cache
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.exe
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.deps.json
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.runtimeconfig.json
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.runtimeconfig.dev.json
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.dll
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.pdb
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\RDFSharp.dll
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\RDFSharp.pdb
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\RDFSharp.xml
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.csproj.AssemblyReference.cache
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.GeneratedMSBuildEditorConfig.editorconfig
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.AssemblyInfoInputs.cache
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.AssemblyInfo.cs
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.csproj.CoreCompileInputs.cache
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.csproj.CopyComplete
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.dll
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\refint\ManualTests.dll
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.pdb
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.genruntimeconfig.cache
+D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ref\ManualTests.dll
