@@ -41,6 +41,7 @@ namespace ManualTests
 
                     case "4":
                         {
+                            CreateGraphMenu();
                             break;
                         }
 
