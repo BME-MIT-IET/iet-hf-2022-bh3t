@@ -514,6 +514,7 @@ namespace ManualTests
                 Console.WriteLine("2. create graph with triples");
                 Console.WriteLine("3. create graph with uri string");
                 Console.WriteLine("4. create graph from datatable");
+                Console.WriteLine("5. create graph from uri");
                 Console.WriteLine("Exit create resources (e)");
                 string menu = Console.ReadLine();
                 switch (menu)
@@ -545,6 +546,12 @@ namespace ManualTests
                     case "e":
                         {
                             cgMenu = false;
+                            break;
+                        }
+
+                    case "5":
+                        {
+                            CreateGraph(5);
                             break;
                         }
 
@@ -609,7 +616,8 @@ namespace ManualTests
                             Console.WriteLine("Expectation: Success");
                             var waltdisney = new RDFGraph();
                             waltdisney.SetContext(new Uri("http://waltdisney.com/"));
-                            Console.WriteLine(waltdisney);
+                            foreach (RDFTriple Triple in waltdisney)
+                                Console.WriteLine(Triple);
                         }
                         catch (Exception e)
                         {
@@ -636,7 +644,14 @@ namespace ManualTests
                             var waltdisney_list = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus_triple });
 
                             var waltdisney_table = waltdisney_list.ToDataTable();
-                            Console.WriteLine(waltdisney_table);
+                            var waltdisney_newgraph = RDFGraph.FromDataTable(waltdisney_table);
+                            foreach (RDFTriple t in waltdisney_newgraph)
+                            {
+                                Console.WriteLine("Subject: " + t.Subject);
+                                Console.WriteLine("Predicate: " + t.Predicate);
+                                Console.WriteLine("Object: " + t.Object);
+                            }
+
 
                         }
                         catch (Exception e)
@@ -645,7 +660,86 @@ namespace ManualTests
                         }
                         break;
                     }
+
+                case 5:
+                    {
+                        try
+                        {
+                            Console.WriteLine("Expectation: Success");
+                            var foafGraph = RDFGraph.FromUri(new Uri(RDFVocabulary.FOAF.BASE_URI));
+                            foreach (RDFTriple t in foafGraph)
+                            {
+                                Console.WriteLine("Subject: " + t.Subject);
+                                Console.WriteLine("Predicate: " + t.Predicate);
+                                Console.WriteLine("Object: " + t.Object);
+                            }
+
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        break;
+                    }
+
                 default: break;
+            }
+        }
+
+        private static void ManipulateGraphMenu()
+        {
+            bool mgMenu = true;
+            while (mgMenu)
+            {
+                Console.WriteLine("Choose a sub-test!");
+                Console.WriteLine("1. add triple to graph");
+                Console.WriteLine("2. delete triples from graph");
+                Console.WriteLine("3. delete triples by subject from graph");
+                Console.WriteLine("4. delete triples by non existing predicate from graph");
+                Console.WriteLine("5. delete triples by object from graph");
+                Console.WriteLine("6. delete triples by non existing literal from graph");
+                Console.WriteLine("7. clear triples from graph");
+                Console.WriteLine("8. check if given triple exists");
+                Console.WriteLine("Exit create resources (e)");
+                string menu = Console.ReadLine();
+                switch (menu)
+                {
+                    case "1":
+                        {
+                            
+                            break;
+                        }
+
+                    case "2":
+                        {
+                            
+                            break;
+                        }
+
+                    case "3":
+                        {
+                            
+                            break;
+                        }
+
+                    case "4":
+                        {
+                            
+                            break;
+                        }
+
+                    case "e":
+                        {
+                            mgMenu = false;
+                            break;
+                        }
+
+                    default:
+                        {
+                            Console.WriteLine("Choose a number from above!");
+                            break;
+                        }
+                }
             }
         }
     }
