@@ -203,16 +203,14 @@ namespace RDFSharp.Store
                     RDFResource P = null;
                     RDFResource O = null;
                     RDFLiteral L = null;
-                    RDFContext C = new RDFContext();
+                    RDFContext C;
                     while ((nquad = sr.ReadLine()) != null)
                     {
                         nquadIndex++;
 
                         #region sanitize  & tokenize
                         //Cleanup previous data
-                        S = null;
                         tokens[0] = string.Empty;
-                        P = null;
                         tokens[1] = string.Empty;
                         O = null;
                         L = null;

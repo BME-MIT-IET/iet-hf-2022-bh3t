@@ -44,7 +44,7 @@ namespace RDFSharp.Semantics.OWL
                         RDFSemanticsEnums.RDFOntologyValidatorEvidenceCategory.Error,
                         "Vocabulary_Disjointness",
                         string.Format("Disjointess of class model and property model is violated because the name '{0}' refers both to a class and a property.", c),
-                        string.Format("Remove, or rename, one of the two entities: at the moment, the given ontology is OWL Full!")
+                        "Remove, or rename, one of the two entities: at the moment, the given ontology is OWL Full!"
                     ));
                 }
                 if (ontology.Data.Facts.ContainsKey(c.PatternMemberID))
@@ -53,7 +53,7 @@ namespace RDFSharp.Semantics.OWL
                         RDFSemanticsEnums.RDFOntologyValidatorEvidenceCategory.Error,
                         "Vocabulary_Disjointness",
                         string.Format("Disjointess of class model and data is violated because the name '{0}' refers both to a class and a fact.", c),
-                        string.Format("Remove, or rename, one of the two entities: at the moment, the given ontology is OWL Full!")
+                        "Remove, or rename, one of the two entities: at the moment, the given ontology is OWL Full!"
                     ));
                 }
             }
@@ -68,7 +68,7 @@ namespace RDFSharp.Semantics.OWL
                         RDFSemanticsEnums.RDFOntologyValidatorEvidenceCategory.Error,
                         "Vocabulary_Disjointness",
                         string.Format("Disjointess of property model and data is violated because the name '{0}' refers both to a property and a fact.", p),
-                        string.Format("Remove, or rename, one of the two entities: at the moment, the given ontology is OWL Full!")
+                        "Remove, or rename, one of the two entities: at the moment, the given ontology is OWL Full!"
                     ));
                 }
             }
@@ -1157,7 +1157,7 @@ namespace RDFSharp.Semantics.OWL
                         RDFSemanticsEnums.RDFOntologyValidatorEvidenceCategory.Error,
                         "PropertyChainAxiom",
                         string.Format("Violation of OWL2-DL axiom closure caused by propertyChain '{0}': unallowed type of restriction '{1}'", onProperty, restrictionsEnum.Current),
-                        string.Format("It is not allowed the use of property chain axiom on cardinality or hasSelf restrictions: review the class model")
+                        "It is not allowed the use of property chain axiom on cardinality or hasSelf restrictions: review the class model"
                     ));
                 }
             }
@@ -1174,7 +1174,7 @@ namespace RDFSharp.Semantics.OWL
                         RDFSemanticsEnums.RDFOntologyValidatorEvidenceCategory.Error,
                         "PropertyChainAxiom",
                         string.Format("Violation of OWL2-DL axiom closure caused by propertyChain '{0}': unallowed mathematical behavior of property", objPropsEnum.Current),
-                        string.Format("It is not allowed the use of property chain axiom on object properties being functional, or inverse functional, or irreflexive, or asymmetric: review the property model")
+                        "It is not allowed the use of property chain axiom on object properties being functional, or inverse functional, or irreflexive, or asymmetric: review the property model"
                     ));
                 }
             }
@@ -1188,7 +1188,7 @@ namespace RDFSharp.Semantics.OWL
                     RDFSemanticsEnums.RDFOntologyValidatorEvidenceCategory.Error,
                     "PropertyChainAxiom",
                     string.Format("Violation of OWL2-DL axiom closure caused by propertyChain '{0}': unallowed explicit assertion '{1}'", propChainAsn.TaxonomyPredicate, propChainAsn),
-                    string.Format("It is not allowed the use of property chain axiom on assertions, since it is a virtual property which can only be materialized by a reasoner")
+                    "It is not allowed the use of property chain axiom on assertions, since it is a virtual property which can only be materialized by a reasoner"
                 ));
             }
 
@@ -1200,7 +1200,7 @@ namespace RDFSharp.Semantics.OWL
                     RDFSemanticsEnums.RDFOntologyValidatorEvidenceCategory.Error,
                     "PropertyChainAxiom",
                     string.Format("Violation of OWL2-DL axiom closure caused by propertyChain '{0}': unallowed negative assertion {1}", propChainNegAsn.TaxonomyPredicate, propChainNegAsn),
-                    string.Format("It is not allowed the use of property chain axiom on negative assertions, since it is a virtual property which can only be materialized by a reasoner")
+                    "It is not allowed the use of property chain axiom on negative assertions, since it is a virtual property which can only be materialized by a reasoner"
                 ));
             }
             #endregion

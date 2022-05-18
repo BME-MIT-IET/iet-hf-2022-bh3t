@@ -39,13 +39,13 @@ namespace RDFSharp.Semantics.OWL
         /// Default-ctor to build a swrlb:lessThan built-in with given arguments
         /// </summary>
         public RDFOntologyReasonerRuleLessThanBuiltIn(RDFVariable leftArgument, RDFOntologyFact rightArgument)
-            : this(leftArgument, rightArgument?.Value as RDFPatternMember) { }
+            : this(leftArgument, rightArgument?.Value) { }
 
         /// <summary>
         /// Default-ctor to build a swrlb:lessThan built-in with given arguments
         /// </summary>
         public RDFOntologyReasonerRuleLessThanBuiltIn(RDFVariable leftArgument, RDFOntologyLiteral rightArgument)
-            : this(leftArgument, rightArgument?.Value as RDFPatternMember) { }
+            : this(leftArgument, rightArgument?.Value) { }
 
         /// <summary>
         /// Internal-ctor to build a swrlb:lessThan built-in with given arguments
