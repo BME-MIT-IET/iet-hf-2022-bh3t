@@ -18,6 +18,5 @@ Az API négy rétegből épül fel:
 - Egységtesztek kiegészítése és tesztek kódlefedettségének mérése
 
 ### Termék/felhasználó fókusz
-- Nem-funkcionális jellemzők vizsgálata
 - BDD tesztek készítése
 - Manuális tesztek megtervezése, végrehajtása és dokumentálása

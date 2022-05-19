@@ -379,7 +379,6 @@ namespace RDFSharp.Model
                 {
                     using (XmlTextReader xmlReader = new XmlTextReader(streamReader))
                     {
-                        xmlReader.DtdProcessing = DtdProcessing.Parse;
                         xmlReader.Normalization = false;
 
                         #region document
@@ -587,7 +586,7 @@ namespace RDFSharp.Model
                                 #region rdf:ID
                                 if (rdfId != null)
                                 {
-                                    //"rdf:ID" at predicate level appends the parsed triple and also its reification statements;
+                                    //"rdf:ID" at predicate level appends the parsed triple and also its reification statements
                                     //The subject of reification is the value of "rdf:ID" attribute resolved against xmlBase
                                     RDFTriple rdfIdTriple = GetRdfIdTriple(predNode, subj, pred, xmlBase, xmlLangPred);
                                     if (rdfIdTriple != null)
@@ -697,7 +696,7 @@ namespace RDFSharp.Model
                             && attr.Name.ToUpperInvariant() != "XML:LANG"
                                 && attr.Name.ToUpperInvariant() != "XML:BASE")
                     {
-                        //Try to resolve the current namespace against the namespace register;
+                        //Try to resolve the current namespace against the namespace register
                         //if not resolved, create new namespace with scope limited to actual node
                         RDFNamespace ns =
                         (RDFNamespaceRegister.GetByPrefix(attr.LocalName) ??

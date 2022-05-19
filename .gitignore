@@ -351,3 +351,6 @@ MigrationBackup/
 
 # idk what is this (Zsombor)
 **/project.assets.json
+**/RDFSharpSpecflowTests/bin
+**/RDFSharpSpecflowTests/obj
+

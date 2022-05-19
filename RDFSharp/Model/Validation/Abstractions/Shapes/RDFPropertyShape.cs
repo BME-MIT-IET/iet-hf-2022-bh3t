@@ -85,7 +85,7 @@ namespace RDFSharp.Model
                 //Typed Literal
                 else
                     if (((RDFTypedLiteral)description).Datatype.Equals(RDFModelEnums.RDFDatatypes.XSD_STRING))
-                    this.Descriptions.Add(description);
+                        this.Descriptions.Add(description);
             }
             return this;
         }
@@ -104,7 +104,7 @@ namespace RDFSharp.Model
                 //Typed Literal
                 else
                     if (((RDFTypedLiteral)name).Datatype.Equals(RDFModelEnums.RDFDatatypes.XSD_STRING))
-                    this.Names.Add(name);
+                        this.Names.Add(name);
             }
             return this;
         }

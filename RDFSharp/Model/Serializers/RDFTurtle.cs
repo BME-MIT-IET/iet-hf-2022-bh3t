@@ -453,12 +453,10 @@ namespace RDFSharp.Model
             // the two parsing methods for blank nodes to use
             if (bufChar == '[')
             {
-                bufChar = ReadCodePoint(turtleData, turtleContext);
                 SkipWhitespace(turtleData, turtleContext, result);
                 bufChar = PeekCodePoint(turtleData, turtleContext);
                 if (bufChar == ']')
                 {
-                    bufChar = ReadCodePoint(turtleData, turtleContext);
                     turtleContext.Subject = new RDFResource();
                     SkipWhitespace(turtleData, turtleContext, result);
                     ParsePredicateObjectList(turtleData, turtleContext, result);
@@ -707,8 +705,8 @@ namespace RDFSharp.Model
                 UnreadCodePoint(turtleData, turtleContext, bufChar);
 
                 // Remember current subject and predicate
-                RDFResource oldSubject = (RDFResource)turtleContext.Subject;
-                RDFResource oldPredicate = (RDFResource)turtleContext.Predicate;
+                RDFResource oldSubject = turtleContext.Subject;
+                RDFResource oldPredicate = turtleContext.Predicate;
 
                 // generated bNode becomes subject
                 turtleContext.Subject = bNode;

@@ -203,16 +203,14 @@ namespace RDFSharp.Store
                     RDFResource P = null;
                     RDFResource O = null;
                     RDFLiteral L = null;
-                    RDFContext C = new RDFContext();
+                    RDFContext C;
                     while ((nquad = sr.ReadLine()) != null)
                     {
                         nquadIndex++;
 
                         #region sanitize  & tokenize
                         //Cleanup previous data
-                        S = null;
                         tokens[0] = string.Empty;
-                        P = null;
                         tokens[1] = string.Empty;
                         O = null;
                         L = null;
@@ -343,7 +341,7 @@ namespace RDFSharp.Store
         {
             //A legal N-Quad starts with "_:" of blanks or "<" of non-blanks
             if (!nquad.StartsWith("_:") && !nquad.StartsWith("<"))
-                throw new Exception("found illegal N-Quad, must start with \"_:\" or with \"<\"");
+                throw new ArgumentException("found illegal N-Quad, must start with \"_:\" or with \"<\"");
 
             string[] tokens = new string[4];
 
@@ -585,7 +583,7 @@ namespace RDFSharp.Store
                     return tokens;
                 }
 
-                throw new Exception("found illegal N-Quad, unrecognized 'S->->->' structure");
+                throw new ArgumentException("found illegal N-Quad, unrecognized 'S->->->' structure");
             }
             //B->->-> quadruple
             else
@@ -825,7 +823,7 @@ namespace RDFSharp.Store
                     return tokens;
                 }
 
-                throw new Exception("found illegal N-Quad, unrecognized 'B->->->' structure");
+                throw new ArgumentException("found illegal N-Quad, unrecognized 'B->->->' structure");
             }
         }
         #endregion
