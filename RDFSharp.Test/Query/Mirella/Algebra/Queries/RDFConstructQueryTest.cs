@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RDFSharp.Model;
 using RDFSharp.Query;
+using WireMock.RequestBuilders;
+using WireMock.ResponseBuilders;
 using WireMock.Server;
 
 namespace RDFSharp.Test.Query
@@ -88,5 +92,38 @@ Environment.NewLine+
             ));
         }
 
+        [TestMethod]
+        public void ShouldApplyConstructQueryToSPARQLEndpoint()
+        {
+            server
+                .Given(
+                    Request.Create()
+                        .WithPath("/RDFAskQueryTest/ShouldApplyConstructQueryToSPARQLEndpoint/sparql")
+                        .UsingGet()
+                        .WithParam(queryParams => queryParams.ContainsKey("query")))
+                .RespondWith(
+                    Response.Create()
+                        .WithBody(
+@"@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<http://www.w3.org/TR/rdf-syntax-grammar>
+  dc:title ""RDF/XML Syntax Specification (Revised)"" .", encoding: Encoding.UTF8)
+                        .WithHeader("Content-Type", "application/sparql-results+ttl")
+                        .WithStatusCode(HttpStatusCode.OK));
+
+            RDFConstructQuery query = new RDFConstructQuery();
+            RDFSPARQLEndpoint endpoint = new RDFSPARQLEndpoint(new Uri(server.Url + "/RDFAskQueryTest/ShouldApplyConstructQueryToSPARQLEndpoint/sparql"));
+
+
+            RDFConstructQueryResult result = query.ApplyToSPARQLEndpoint(endpoint);
+            DataTable resultDataTable = result.ConstructResults;
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(resultDataTable.Rows.Count, 1);
+            Assert.AreEqual(resultDataTable.Rows[0][0], "http://www.w3.org/TR/rdf-syntax-grammar");
+            Assert.AreEqual(resultDataTable.Rows[0][1], "http://purl.org/dc/elements/1.1/title");
+            Assert.AreEqual(resultDataTable.Rows[0][2], "RDF/XML Syntax Specification (Revised)");
+        }
     }
 }
