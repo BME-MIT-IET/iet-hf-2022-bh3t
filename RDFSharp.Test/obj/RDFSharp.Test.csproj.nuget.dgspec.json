@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj": {}
+    "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj": {}
   },
   "projects": {
-    "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj": {
+    "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj": {
       "version": "2.26.1",
       "restore": {
-        "projectUniqueName": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
+        "projectUniqueName": "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
         "projectName": "RDFSharp.Test",
-        "projectPath": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
-        "packagesPath": "C:\\Users\\Panka\\.nuget\\packages\\",
-        "outputPath": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp.Test\\obj\\",
+        "projectPath": "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp.Test\\RDFSharp.Test.csproj",
+        "packagesPath": "C:\\Users\\bajka\\.nuget\\packages\\",
+        "outputPath": "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Panka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bajka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {
-                "projectPath": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj"
+              "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {
+                "projectPath": "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj"
               }
             }
           }
@@ -82,21 +82,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {
+    "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj": {
       "version": "2.26.1",
       "restore": {
-        "projectUniqueName": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj",
+        "projectUniqueName": "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj",
         "projectName": "RDFSharp",
-        "projectPath": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj",
-        "packagesPath": "C:\\Users\\Panka\\.nuget\\packages\\",
-        "outputPath": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\RDFSharp\\obj\\",
+        "projectPath": "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp\\RDFSharp.csproj",
+        "packagesPath": "C:\\Users\\bajka\\.nuget\\packages\\",
+        "outputPath": "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\RDFSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Panka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bajka\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -148,7 +148,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

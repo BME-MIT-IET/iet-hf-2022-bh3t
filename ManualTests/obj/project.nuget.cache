@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "75hlcxnzH6d0NZn+g7xoT5ITdhtOCStfhSgsRS0c28IO2kT/qDJLh/jB8Cz2sKnYpajdaY+Hlb3VmFTTB7GKfQ==",
+  "dgSpecHash": "QkEnbZ69RvY5vOt3y3BKHE6RTSAyVknqvG9UtL4QJfu9z75lONJ+KTDk5yen4G+3Y5rDAK8C+faqReBxLh5yDQ==",
   "success": true,
-  "projectFilePath": "D:\\PANKA\\06 SULI\\6. felev\\iet\\iet-hf-2022-bh3t\\ManualTests\\ManualTests.csproj",
+  "projectFilePath": "D:\\Profile\\Documents\\GitHub\\iet-hf-2022-bh3t\\ManualTests\\ManualTests.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Panka\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512"
+    "C:\\Users\\bajka\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

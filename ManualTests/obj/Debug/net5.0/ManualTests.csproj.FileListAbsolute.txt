@@ -34,3 +34,22 @@ D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\refi
 D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.pdb
 D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.genruntimeconfig.cache
 D:\PANKA\06 SULI\6. felev\iet\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ref\ManualTests.dll
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.exe
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.deps.json
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.runtimeconfig.json
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.runtimeconfig.dev.json
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.dll
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ref\ManualTests.dll
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\ManualTests.pdb
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\RDFSharp.dll
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\RDFSharp.pdb
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\bin\Debug\net5.0\RDFSharp.xml
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.csproj.AssemblyReference.cache
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.GeneratedMSBuildEditorConfig.editorconfig
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.AssemblyInfoInputs.cache
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.AssemblyInfo.cs
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.csproj.CoreCompileInputs.cache
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.dll
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ref\ManualTests.dll
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.pdb
+D:\Profile\Documents\GitHub\iet-hf-2022-bh3t\ManualTests\obj\Debug\net5.0\ManualTests.genruntimeconfig.cache
