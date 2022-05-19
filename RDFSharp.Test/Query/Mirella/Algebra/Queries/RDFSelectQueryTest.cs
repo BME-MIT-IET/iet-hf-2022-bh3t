@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RDFSharp.Model;
 using RDFSharp.Query;
+using WireMock.RequestBuilders;
+using WireMock.ResponseBuilders;
 using WireMock.Server;
 
 namespace RDFSharp.Test.Query.Mirella.Algebra.Queries
@@ -79,5 +83,53 @@ Environment.NewLine +
 "LIMIT 5"
             ));
         }
+
+        [TestMethod]
+        public void ShouldApplySelectQueryToSPARQLEndpoint()
+        {
+            server
+                .Given(
+                    Request.Create()
+                        .WithPath("/RDFSelectQueryTest/ShouldApplySelectQueryToSPARQLEndpoint/sparql")
+                        .UsingGet()
+                        .WithParam(queryParams => queryParams.ContainsKey("query")))
+                .RespondWith(
+                    Response.Create()
+                        .WithBody(
+@"<?xml version=""1.0""?>
+<sparql xmlns='http://www.w3.org/2005/sparql-results#'>
+    <head>
+        <variable name=""x""/>
+        <variable name=""y""/>
+    </head>
+    <results>
+        <result>
+            <binding name=""x""><literal>one</literal></binding>
+            <binding name=""y""><literal>one</literal></binding>
+        </result>
+        <result>
+            <binding name=""x""><literal>two</literal></binding>
+            <binding name=""y""><literal>two</literal></binding>
+        </result>
+    </results>
+</sparql>", encoding: Encoding.UTF8)
+                        .WithHeader("Content-Type", "application/sparql-results+xml")
+                        .WithStatusCode(HttpStatusCode.OK));
+
+            RDFSelectQuery query = new RDFSelectQuery();
+            RDFSPARQLEndpoint endpoint = new RDFSPARQLEndpoint(new Uri(server.Url + "/RDFSelectQueryTest/ShouldApplySelectQueryToSPARQLEndpoint/sparql"));
+
+
+            RDFSelectQueryResult result = query.ApplyToSPARQLEndpoint(endpoint);
+            DataTable resultDataTable = result.SelectResults;
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(resultDataTable.Rows.Count, 2);
+            Assert.AreEqual(resultDataTable.Rows[0][0], "one");
+            Assert.AreEqual(resultDataTable.Rows[0][1], "one");
+            Assert.AreEqual(resultDataTable.Rows[1][0], "two");
+            Assert.AreEqual(resultDataTable.Rows[1][1], "two");
+        }
+
     }
 }
