@@ -341,7 +341,7 @@ namespace RDFSharp.Store
         {
             //A legal N-Quad starts with "_:" of blanks or "<" of non-blanks
             if (!nquad.StartsWith("_:") && !nquad.StartsWith("<"))
-                throw new Exception("found illegal N-Quad, must start with \"_:\" or with \"<\"");
+                throw new ArgumentException("found illegal N-Quad, must start with \"_:\" or with \"<\"");
 
             string[] tokens = new string[4];
 
@@ -583,7 +583,7 @@ namespace RDFSharp.Store
                     return tokens;
                 }
 
-                throw new Exception("found illegal N-Quad, unrecognized 'S->->->' structure");
+                throw new ArgumentException("found illegal N-Quad, unrecognized 'S->->->' structure");
             }
             //B->->-> quadruple
             else
@@ -823,7 +823,7 @@ namespace RDFSharp.Store
                     return tokens;
                 }
 
-                throw new Exception("found illegal N-Quad, unrecognized 'B->->->' structure");
+                throw new ArgumentException("found illegal N-Quad, unrecognized 'B->->->' structure");
             }
         }
         #endregion
