@@ -64,7 +64,8 @@ Az alábbi hibák merültek fel az analízis során:
 
 - ### S112  General exceptions should never be thrown. 'System.Exception' should not be thrown by user code.
 
-    A hibák dobásánál minden esetben `System.Exception` típusú hibák kerülnek dobásra, és csak egy string jelzi a hibák valós okát. Ehelyett általában sokkal célravezetőbb lenne konkrét hibaosztályok használata, például `ArgumentNullException`, azonban esetünkben nincsenek olyan beépített `Exception` leszármazottak, amik pontosan illenének a problémákra.
+    A hibák dobásánál minden esetben `System.Exception` típusú hibák kerülnek dobásra, és csak egy string jelzi a hibák valós okát. Ehelyett általában sokkal célravezetőbb lenne konkrét hibaosztályok használata, például `ArgumentNullException` vagy `ArgumentException`. Javítás:
+    https://github.com/BME-MIT-IET/iet-hf-2022-bh3t/commit/c9d90224c07656e490a56ef7bf9a6d02fe1b0c0f
 
 - ### S1125 Boolean literals should not be redundant. Remove the unnecessary Boolean literal(s).
 
