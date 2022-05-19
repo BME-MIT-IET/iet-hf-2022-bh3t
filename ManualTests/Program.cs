@@ -903,7 +903,14 @@ namespace ManualTests
                             new RDFResource("http://xmlns.com/foaf/0.1/age"),
                             new RDFTypedLiteral("85", RDFModelEnums.RDFDatatypes.XSD_INTEGER));
 
-                        var waltdisney = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus });
+                        var goofygoof = new RDFResource("http://www.waltdisney.com/goofy_goof");
+
+                        RDFTriple mickeymouse_knows_goofygoof = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/knows"),
+                            goofygoof);
+
+                        var waltdisney = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus, mickeymouse_knows_goofygoof });
                         waltdisney.RemoveTriplesByObject(goofygoof);
                         foreach (RDFTriple t in waltdisney)
                         {
@@ -998,7 +1005,26 @@ namespace ManualTests
                 case 9:
                     try
                     {
+                        Console.WriteLine("Expectation: Success");
+                        var donaldduck = new RDFResource("http://www.waltdisney.com/donald_duck");
+                        RDFTriple donaldduck_name_enus = new RDFTriple(
+                                donaldduck,
+                                new RDFResource("http://xmlns.com/foaf/0.1/name"),
+                                new RDFPlainLiteral("Donald Duck", "en-US"));
 
+                        RDFTriple mickeymouse_is85yr = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/age"),
+                            new RDFTypedLiteral("85", RDFModelEnums.RDFDatatypes.XSD_INTEGER));
+
+                        var waltdisney = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus });
+                        RDFGraph triples_by_subject = waltdisney.SelectTriplesBySubject(donaldduck);
+                        foreach (RDFTriple t in triples_by_subject)
+                        {
+                            Console.WriteLine("Subject: " + t.Subject);
+                            Console.WriteLine("Predicate: " + t.Predicate);
+                            Console.WriteLine("Object: " + t.Object);
+                        }
                     }
                     catch (Exception e)
                     {
@@ -1008,7 +1034,26 @@ namespace ManualTests
                 case 10:
                     try
                     {
+                        Console.WriteLine("Expectation: Success");
+                        RDFTriple donaldduck_name_enus = new RDFTriple(
+                                new RDFResource("http://www.waltdisney.com/donald_duck"),
+                                new RDFResource("http://xmlns.com/foaf/0.1/name"),
+                                new RDFPlainLiteral("Donald Duck", "en-US"));
 
+                        RDFTriple mickeymouse_is85yr = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/age"),
+                            new RDFTypedLiteral("85", RDFModelEnums.RDFDatatypes.XSD_INTEGER));
+
+                        var waltdisney = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus });
+                        RDFGraph triples_by_predicate = waltdisney.SelectTriplesByPredicate(
+                            new RDFResource("http://xmlns.com/foaf/0.1/name"));
+                        foreach (RDFTriple t in triples_by_predicate)
+                        {
+                            Console.WriteLine("Subject: " + t.Subject);
+                            Console.WriteLine("Predicate: " + t.Predicate);
+                            Console.WriteLine("Object: " + t.Object);
+                        }
                     }
                     catch (Exception e)
                     {
@@ -1018,7 +1063,34 @@ namespace ManualTests
                 case 11:
                     try
                     {
+                        Console.WriteLine("Expectation: Success");
+                        RDFTriple donaldduck_name_enus = new RDFTriple(
+                                new RDFResource("http://www.waltdisney.com/donald_duck"),
+                                new RDFResource("http://xmlns.com/foaf/0.1/name"),
+                                new RDFPlainLiteral("Donald Duck", "en-US"));
 
+                        RDFTriple mickeymouse_is85yr = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/age"),
+                            new RDFTypedLiteral("85", RDFModelEnums.RDFDatatypes.XSD_INTEGER));
+
+                        var goofygoof = new RDFResource("http://www.waltdisney.com/goofy_goof");
+
+                        RDFTriple mickeymouse_knows_goofygoof = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/knows"),
+                            goofygoof);
+
+                        var waltdisney = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus, mickeymouse_knows_goofygoof });
+                        
+                        RDFGraph triples_by_object = waltdisney.SelectTriplesByObject(goofygoof);
+
+                        foreach (RDFTriple t in triples_by_object)
+                        {
+                            Console.WriteLine("Subject: " + t.Subject);
+                            Console.WriteLine("Predicate: " + t.Predicate);
+                            Console.WriteLine("Object: " + t.Object);
+                        }
                     }
                     catch (Exception e)
                     {
@@ -1028,7 +1100,24 @@ namespace ManualTests
                 case 12:
                     try
                     {
-
+                        Console.WriteLine("Expectation: Success");
+                        RDFTriple donaldduck_name_enus = new RDFTriple(
+                                new RDFResource("http://www.waltdisney.com/donald_duck"),
+                                new RDFResource("http://xmlns.com/foaf/0.1/name"),
+                                new RDFPlainLiteral("Donald Duck", "en-US"));
+                        var mickeymouse_age = new RDFTypedLiteral("85", RDFModelEnums.RDFDatatypes.XSD_INTEGER);
+                        RDFTriple mickeymouse_is85yr = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/age"),
+                            mickeymouse_age);
+                        var waltdisney = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus });
+                        RDFGraph triples_by_literal = waltdisney.SelectTriplesByLiteral(mickeymouse_age);
+                        foreach (RDFTriple t in triples_by_literal)
+                        {
+                            Console.WriteLine("Subject: " + t.Subject);
+                            Console.WriteLine("Predicate: " + t.Predicate);
+                            Console.WriteLine("Object: " + t.Object);
+                        }
                     }
                     catch (Exception e)
                     {
@@ -1038,7 +1127,27 @@ namespace ManualTests
                 case 13:
                     try
                     {
+                        Console.WriteLine("Expectation: Success");
+                        RDFTriple donaldduck_name_enus = new RDFTriple(
+                                new RDFResource("http://www.waltdisney.com/donald_duck"),
+                                new RDFResource("http://xmlns.com/foaf/0.1/name"),
+                                new RDFPlainLiteral("Donald Duck", "en-US"));
 
+                        RDFTriple mickeymouse_is85yr = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/age"),
+                            new RDFTypedLiteral("85", RDFModelEnums.RDFDatatypes.XSD_INTEGER));
+
+                        var waltdisney = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr });
+                        var waltdisney_filled = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus });
+
+                        RDFGraph intersection_triples = waltdisney.IntersectWith(waltdisney_filled);
+                        foreach (RDFTriple t in intersection_triples)
+                        {
+                            Console.WriteLine("Subject: " + t.Subject);
+                            Console.WriteLine("Predicate: " + t.Predicate);
+                            Console.WriteLine("Object: " + t.Object);
+                        }
                     }
                     catch (Exception e)
                     {
@@ -1048,7 +1157,27 @@ namespace ManualTests
                 case 14:
                     try
                     {
+                        Console.WriteLine("Expectation: Success");
+                        RDFTriple donaldduck_name_enus = new RDFTriple(
+                                new RDFResource("http://www.waltdisney.com/donald_duck"),
+                                new RDFResource("http://xmlns.com/foaf/0.1/name"),
+                                new RDFPlainLiteral("Donald Duck", "en-US"));
 
+                        RDFTriple mickeymouse_is85yr = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/age"),
+                            new RDFTypedLiteral("85", RDFModelEnums.RDFDatatypes.XSD_INTEGER));
+
+                        var waltdisney = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr });
+                        var waltdisney_filled = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus });
+
+                        RDFGraph union_triples = waltdisney.UnionWith(waltdisney_filled);
+                        foreach (RDFTriple t in union_triples)
+                        {
+                            Console.WriteLine("Subject: " + t.Subject);
+                            Console.WriteLine("Predicate: " + t.Predicate);
+                            Console.WriteLine("Object: " + t.Object);
+                        }
                     }
                     catch (Exception e)
                     {
@@ -1058,7 +1187,27 @@ namespace ManualTests
                 case 15:
                     try
                     {
+                        Console.WriteLine("Expectation: Success");
+                        RDFTriple donaldduck_name_enus = new RDFTriple(
+                                new RDFResource("http://www.waltdisney.com/donald_duck"),
+                                new RDFResource("http://xmlns.com/foaf/0.1/name"),
+                                new RDFPlainLiteral("Donald Duck", "en-US"));
 
+                        RDFTriple mickeymouse_is85yr = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/age"),
+                            new RDFTypedLiteral("85", RDFModelEnums.RDFDatatypes.XSD_INTEGER));
+
+                        var waltdisney = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr });
+                        var waltdisney_filled = new RDFGraph(new List<RDFTriple>() { mickeymouse_is85yr, donaldduck_name_enus });
+
+                        RDFGraph difference_triples = waltdisney_filled.DifferenceWith(waltdisney);
+                        foreach (RDFTriple t in difference_triples)
+                        {
+                            Console.WriteLine("Subject: " + t.Subject);
+                            Console.WriteLine("Predicate: " + t.Predicate);
+                            Console.WriteLine("Object: " + t.Object);
+                        }
                     }
                     catch (Exception e)
                     {
