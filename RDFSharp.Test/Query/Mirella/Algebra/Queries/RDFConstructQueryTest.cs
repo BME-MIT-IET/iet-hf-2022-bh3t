@@ -97,7 +97,7 @@ Environment.NewLine+
             server
                 .Given(
                     Request.Create()
-                        .WithPath("/RDFAskQueryTest/ShouldApplyConstructQueryToSPARQLEndpoint/sparql")
+                        .WithPath("/RDFConstructQueryTest/ShouldApplyConstructQueryToSPARQLEndpoint/sparql")
                         .UsingGet()
                         .WithParam(queryParams => queryParams.ContainsKey("query")))
                 .RespondWith(
@@ -112,7 +112,7 @@ Environment.NewLine+
                         .WithStatusCode(HttpStatusCode.OK));
 
             RDFConstructQuery query = new RDFConstructQuery();
-            RDFSPARQLEndpoint endpoint = new RDFSPARQLEndpoint(new Uri(server.Url + "/RDFAskQueryTest/ShouldApplyConstructQueryToSPARQLEndpoint/sparql"));
+            RDFSPARQLEndpoint endpoint = new RDFSPARQLEndpoint(new Uri(server.Url + "/RDFConstructQueryTest/ShouldApplyConstructQueryToSPARQLEndpoint/sparql"));
 
 
             RDFConstructQueryResult result = query.ApplyToSPARQLEndpoint(endpoint);
