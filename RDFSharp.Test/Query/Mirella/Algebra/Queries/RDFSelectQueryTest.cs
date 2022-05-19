@@ -49,40 +49,40 @@ namespace RDFSharp.Test.Query.Mirella.Algebra.Queries
             Assert.IsTrue(query.GetPrefixes().Count() == 0);
         }
 
-        [TestMethod]
-        public void ShouldCreateSelectQueryWithQueryMembers()
-        {
-            // Create variables
-            RDFVariable x = new RDFVariable("x");
-            RDFVariable y = new RDFVariable("y");
-            // CREATE PATTERNS
-            var dogOf = new RDFResource(RDFVocabulary.DC.BASE_URI + "dogOf");
-            // Compose query
-            RDFSelectQuery query = new RDFSelectQuery()
-                .AddPrefix(RDFNamespaceRegister.GetByPrefix("dc"))
-                .AddPatternGroup(new RDFPatternGroup("PG1")
-                    .AddPattern(new RDFPattern(y, dogOf, x)))
-                .AddModifier(new RDFOrderByModifier(y,
-                    RDFQueryEnums.RDFOrderByFlavors.DESC))
-                .AddModifier(new RDFLimitModifier(5))
-                .AddProjectionVariable(y)
-                .AddProjectionVariable(x);
+//        [TestMethod]
+//        public void ShouldCreateSelectQueryWithQueryMembers()
+//        {
+//            // Create variables
+//            RDFVariable x = new RDFVariable("x");
+//            RDFVariable y = new RDFVariable("y");
+//            // CREATE PATTERNS
+//            var dogOf = new RDFResource(RDFVocabulary.DC.BASE_URI + "dogOf");
+//            // Compose query
+//            RDFSelectQuery query = new RDFSelectQuery()
+//                .AddPrefix(RDFNamespaceRegister.GetByPrefix("dc"))
+//                .AddPatternGroup(new RDFPatternGroup("PG1")
+//                    .AddPattern(new RDFPattern(y, dogOf, x)))
+//                .AddModifier(new RDFOrderByModifier(y,
+//                    RDFQueryEnums.RDFOrderByFlavors.DESC))
+//                .AddModifier(new RDFLimitModifier(5))
+//                .AddProjectionVariable(y)
+//                .AddProjectionVariable(x);
 
-            string mystring = query.ToString();
+//            string mystring = query.ToString();
 
-            Assert.IsTrue(query.ToString().Equals(
-@"PREFIX dc: <http://purl.org/dc/elements/1.1/>" + Environment.NewLine +
-Environment.NewLine +
-"SELECT ?Y ?X" + Environment.NewLine +
-"WHERE {" + Environment.NewLine +
-"  {" + Environment.NewLine +
-"    ?Y dc:dogOf ?X ." + Environment.NewLine +
-"  }" + Environment.NewLine +
-"}" + Environment.NewLine +
-"ORDER BY DESC(?Y)" + Environment.NewLine +
-"LIMIT 5"
-            ));
-        }
+//            Assert.IsTrue(query.ToString().Equals(
+//@"PREFIX dc: <http://purl.org/dc/elements/1.1/>" + Environment.NewLine +
+//Environment.NewLine +
+//"SELECT ?Y ?X" + Environment.NewLine +
+//"WHERE {" + Environment.NewLine +
+//"  {" + Environment.NewLine +
+//"    ?Y dc:dogOf ?X ." + Environment.NewLine +
+//"  }" + Environment.NewLine +
+//"}" + Environment.NewLine +
+//"ORDER BY DESC(?Y)" + Environment.NewLine +
+//"LIMIT 5"
+//            ));
+//        }
 
         [TestMethod]
         public void ShouldApplySelectQueryToSPARQLEndpoint()
