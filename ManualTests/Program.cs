@@ -347,7 +347,7 @@ namespace ManualTests
                     {
                         try
                         {
-                            Console.WriteLine("Expectation: Success (with empty string)");
+                            Console.WriteLine("Expectation: Exception");
                             var notdonaldduck_name_enus = new RDFPlainLiteral("", "en-US");
                             Console.WriteLine(notdonaldduck_name_enus);
                         }
@@ -362,7 +362,7 @@ namespace ManualTests
                     {
                         try
                         {
-                            Console.WriteLine("Expectation: Success (with empty string and empty language tag)");
+                            Console.WriteLine("Expectation: Exception");
                             var notdonaldduck_name_notenus = new RDFPlainLiteral("", "");
                             Console.WriteLine(notdonaldduck_name_notenus);
                         }
@@ -514,7 +514,6 @@ namespace ManualTests
                 Console.WriteLine("2. create graph with triples");
                 Console.WriteLine("3. create graph with uri string");
                 Console.WriteLine("4. create graph from datatable");
-                Console.WriteLine("5. create graph from uri");
                 Console.WriteLine("Exit create resources (e)");
                 string menu = Console.ReadLine();
                 switch (menu)
@@ -546,12 +545,6 @@ namespace ManualTests
                     case "e":
                         {
                             cgMenu = false;
-                            break;
-                        }
-
-                    case "5":
-                        {
-                            CreateGraph(5);
                             break;
                         }
 
@@ -652,27 +645,6 @@ namespace ManualTests
                                 Console.WriteLine("Object: " + t.Object);
                             }
 
-
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e.Message);
-                        }
-                        break;
-                    }
-
-                case 5:
-                    {
-                        try
-                        {
-                            Console.WriteLine("Expectation: Success");
-                            var foafGraph = RDFGraph.FromUri(new Uri(RDFVocabulary.FOAF.BASE_URI));
-                            foreach (RDFTriple t in foafGraph)
-                            {
-                                Console.WriteLine("Subject: " + t.Subject);
-                                Console.WriteLine("Predicate: " + t.Predicate);
-                                Console.WriteLine("Object: " + t.Object);
-                            }
 
                         }
                         catch (Exception e)
