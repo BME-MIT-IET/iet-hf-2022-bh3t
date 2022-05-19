@@ -210,8 +210,8 @@ namespace RDFSharp.Model
 
                         #region sanitize  & tokenize
                         //Cleanup previous data
-                        S = null; tokens[0] = string.Empty;
-                        P = null; tokens[1] = string.Empty;
+                        tokens[0] = string.Empty;
+                        tokens[1] = string.Empty;
                         O = null; L = null; tokens[2] = string.Empty;
 
                         //Preliminary sanitizations: clean trailing space-like chars
@@ -330,7 +330,7 @@ namespace RDFSharp.Model
         {
             //A legal N-Triple starts with "_:" (blank) or "<" (uri)
             if (!ntriple.StartsWith("_:") && !ntriple.StartsWith("<"))
-                throw new Exception("found illegal N-Triple, must start with \"_:\" or with \"<\"");
+                throw new ArgumentException("found illegal N-Triple, must start with \"_:\" or with \"<\"");
 
             string[] tokens = new string[3];
 
@@ -442,7 +442,7 @@ namespace RDFSharp.Model
                     return tokens;
                 }
 
-                throw new Exception("found illegal N-Triple, unrecognized 'S->->' structure");
+                throw new ArgumentException("found illegal N-Triple, unrecognized 'S->->' structure");
             }
             //B->-> triple
             else
@@ -552,7 +552,7 @@ namespace RDFSharp.Model
                     return tokens;
                 }
 
-                throw new Exception("found illegal N-Triple, unrecognized 'B->->' structure");
+                throw new ArgumentException("found illegal N-Triple, unrecognized 'B->->' structure");
             }
         }
         #endregion

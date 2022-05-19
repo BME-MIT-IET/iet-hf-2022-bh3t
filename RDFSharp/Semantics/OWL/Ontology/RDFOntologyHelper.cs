@@ -435,8 +435,8 @@ namespace RDFSharp.Semantics.OWL
         }
         internal static RDFOntologyPropertyModel GetSubPropertiesOfInternal(this RDFOntologyPropertyModel propertyModel, RDFOntologyProperty ontProperty)
         {
-            var result1 = new RDFOntologyPropertyModel();
-            var result2 = new RDFOntologyPropertyModel();
+            RDFOntologyPropertyModel result1;
+            RDFOntologyPropertyModel result2 = new RDFOntologyPropertyModel();
 
             // Step 1: Direct subsumption of "rdfs:subPropertyOf" taxonomy
             result1 = propertyModel.GetSubPropertiesOfInternalVisitor(ontProperty);
@@ -500,8 +500,8 @@ namespace RDFSharp.Semantics.OWL
         }
         internal static RDFOntologyPropertyModel GetSuperPropertiesOfInternal(this RDFOntologyPropertyModel propertyModel, RDFOntologyProperty ontProperty)
         {
-            var result1 = new RDFOntologyPropertyModel();
-            var result2 = new RDFOntologyPropertyModel();
+            RDFOntologyPropertyModel result1;
+            RDFOntologyPropertyModel result2 = new RDFOntologyPropertyModel();
 
             // Step 1: Direct subsumption of "rdfs:subPropertyOf" taxonomy
             result1 = propertyModel.GetSuperPropertiesOfInternalVisitor(ontProperty);
@@ -1504,7 +1504,6 @@ namespace RDFSharp.Semantics.OWL
                 }
                 else if (hasValueRestriction.RequiredValue.IsLiteral())
                 {
-
                     //Iterate the compatible assertions and track the subject facts having the required value
                     foreach (var assertion in restrictionAssertions.Where(x => x.TaxonomyObject.IsLiteral()))
                     {
@@ -1995,7 +1994,7 @@ namespace RDFSharp.Semantics.OWL
         internal static RDFGraph ReifyToRDFGraph(this RDFOntologyTaxonomy taxonomy, RDFSemanticsEnums.RDFOntologyInferenceExportBehavior infexpBehavior, string taxonomyName,
             RDFOntologyClassModel ontologyClassModel = null, RDFOntologyPropertyModel ontologyPropertyModel = null, RDFOntologyData ontologyData=null)
         {
-            RDFGraph result = new RDFGraph();
+            RDFGraph result;
 
             switch (taxonomyName)
             {
@@ -2043,7 +2042,7 @@ namespace RDFSharp.Semantics.OWL
                 //AxiomAnnotation
                 if (isAxiomAnn)
                     result.AddTriple(new RDFTriple(axiomRepresentative, (RDFResource)te.TaxonomyPredicate.Value, (RDFLiteral)te.TaxonomyObject.Value));
-            };
+            }
 
             //Finds the taxonomy entry represented by the given ID in the ontology taxonomies
             RDFOntologyTaxonomyEntry FindTaxonomyEntry(long teID)

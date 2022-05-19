@@ -43,7 +43,7 @@ namespace RDFSharp.Query
         /// <summary>
         /// Default column type used for Mirella tables
         /// </summary>
-        internal static Type SystemString = typeof(string); 
+        internal static readonly Type SystemString = typeof(string); 
         #endregion
 
         #region Ctors
@@ -881,7 +881,7 @@ namespace RDFSharp.Query
         /// </summary>
         internal DataTable ApplyPattern(RDFPattern pattern, RDFGraph graph)
         {
-            List<RDFTriple> matchingTriples = new List<RDFTriple>();
+            List<RDFTriple> matchingTriples;
             DataTable resultTable = new DataTable();
 
             //SPO pattern
