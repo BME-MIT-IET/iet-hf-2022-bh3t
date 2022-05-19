@@ -1,4 +1,4 @@
-# RDFSharp
+# RDFSharp [![codecov](https://codecov.io/gh/BME-MIT-IET/iet-hf-2022-bh3t/branch/unit-tests/graph/badge.svg?token=9TsCga9CxH)](https://codecov.io/gh/BME-MIT-IET/iet-hf-2022-bh3t)
 
 RDFSharp has a modular API made up of 4 layers: 
 

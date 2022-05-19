@@ -349,8 +349,6 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# idk what is this (Zsombor)
 **/project.assets.json
 **/RDFSharpSpecflowTests/bin
 **/RDFSharpSpecflowTests/obj
-
