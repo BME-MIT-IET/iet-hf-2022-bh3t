@@ -55,7 +55,6 @@ namespace RDFSharp.Test.Query
             RDFVariable x = new RDFVariable("x");
             RDFVariable y = new RDFVariable("y");
             RDFVariable n = new RDFVariable("n");
-            RDFVariable h = new RDFVariable("h");
             // CREATE PATTERNS
             var dogOf = new RDFResource(RDFVocabulary.DC.BASE_URI + "dogOf");
             var age = new RDFResource(RDFVocabulary.FOAF.BASE_URI + "age");
@@ -72,7 +71,7 @@ namespace RDFSharp.Test.Query
                 .AddTemplate(new RDFPattern(y, RDFVocabulary.RDF.TYPE, RDFVocabulary.FOAF.PERSON))
                 .AddModifier(new RDFLimitModifier(10));
 
-            Assert.IsTrue(query.ToString().Trim().Equals(
+            Assert.IsTrue(query.ToString().Equals(
 @"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>"+Environment.NewLine+
 "PREFIX dc: <http://purl.org/dc/elements/1.1/>"+Environment.NewLine+
 "PREFIX foaf: <http://xmlns.com/foaf/0.1/>"+Environment.NewLine+
